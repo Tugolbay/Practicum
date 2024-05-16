@@ -1,0 +1,5 @@
+.hei {
+  @media (max-width: 575px) {
+    height: 142vh;
+  }
+}

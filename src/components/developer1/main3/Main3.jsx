@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { MdOutlineDone } from "react-icons/md";
 
 export const Main3 = () => {
   return (
@@ -21,30 +20,14 @@ export const Main3 = () => {
             </div>
             <div>
               <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Разбор трендов рынка eCom</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>
+                <li>Разбор трендов рынка eCom</li>
+                <li>
                   Пошаговый план построения бизнеса на крупнейших маркетплейсах
-                </p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Выбор и закуп высокомаржинального товара</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Оформление карточки и вывод её в ТОП</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Анализ частых ошибок селлеров</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Варианты масштабирования бизнеса на маркетплейсах</p>
+                </li>
+                <li>Выбор и закуп высокомаржинального товара</li>
+                <li>Оформление карточки и вывод её в ТОП</li>
+                <li>Анализ частых ошибок селлеров</li>
+                <li>Варианты масштабирования бизнеса на маркетплейсах</li>
               </Border1Childe>
             </div>
           </Border1>
@@ -59,29 +42,14 @@ export const Main3 = () => {
             </div>
             <div>
               <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Бизнес-игра по выводу товара на маркетплейсы</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>
+                <li>Бизнес-игра по выводу товара на маркетплейсы</li>
+                <li>
                   Разбор авторских табличек для построения системного бизнеса
-                </p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Выступления спикеров, специализирующихся в узких темах</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Нейросети как эффективный инструмент селлера</p>
-              </Border1Childe>
-              <Border1Childe>
-                {/* <MdOutlineDone size={40} color="#a238ff" /> */}
-                <p>Разбор ваших карточек товаров</p>
-              </Border1Childe>
-              <Border1Childe>
-                <p>Нетворкинг и командная работа</p>
+                </li>
+                <li>Выступления спикеров, специализирующихся в узких темах</li>
+                <li>Нейросети как эффективный инструмент селлера</li>
+                <li>Разбор ваших карточек товаров</li>
+                <li>Нетворкинг и командная работа</li>
               </Border1Childe>
             </div>
           </Border1>
@@ -104,7 +72,7 @@ export const Main3 = () => {
 const Mains = styled("div")`
   display: flex;
   justify-content: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
 `;
 
 const Container = styled("div")`
@@ -187,10 +155,11 @@ const Text = styled("p")`
   }
 `;
 
-const Border1Childe = styled("div")`
+const Border1Childe = styled("ul")`
   display: flex;
-  align-items: center;
-  grid-template-columns: 0.5rem;
+  flex-direction: column;
+  list-style-type: disc;
+  gap: 1rem;
 
   @media (max-width: 960px) {
     p {

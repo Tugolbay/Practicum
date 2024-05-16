@@ -74,7 +74,7 @@ export const Main = ({ resultRef }) => {
 const Mains = styled("div")`
   display: flex;
   justify-content: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
 `;
 
 const Container = styled("div")`
@@ -191,19 +191,13 @@ const Block = styled("div")`
   margin-top: 5rem;
 
   .slider {
-    width: 40rem;
+    width: 30rem;
   }
 
   @media (max-width: 1145px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  @media (max-width: 860px) {
-    .slider {
-      width: 30rem;
-    }
   }
 
   @media (max-width: 630px) {

@@ -71,7 +71,7 @@ export const Main5 = ({ spicerRef }) => {
 const Mains = styled("div")`
   display: flex;
   justify-content: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
 `;
 
 const Container = styled("div")`
@@ -88,13 +88,14 @@ const Container = styled("div")`
     margin: 0;
   }
 
-  @media (max-width: 770px) {
+  @media (max-width: 980px) {
     h1 {
       font-size: 50px;
     }
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 770px) {
+    padding: 2rem;
     h1 {
       font-size: 40px;
     }
@@ -111,18 +112,33 @@ const Block = styled("div")`
   display: flex;
   justify-content: space-between;
   margin-top: 5rem;
+
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 `;
 
 const Block2 = styled("div")`
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
+
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 `;
 
 const Row1 = styled("div")`
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 1rem;
 
   img {
     width: 3rem;
@@ -133,12 +149,23 @@ const Row1 = styled("div")`
     width: 20vw;
     font-size: 20px;
   }
+
+  @media (max-width: 980px) {
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
 `;
 
 const Row2 = styled("div")`
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 1rem;
 
   img {
     width: 3rem;
@@ -149,6 +176,16 @@ const Row2 = styled("div")`
   p {
     width: 20vw;
     font-size: 20px;
+  }
+
+  @media (max-width: 980px) {
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    p {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -164,5 +201,15 @@ const Row3 = styled("div")`
     width: 15rem;
     font-size: 20px;
     font-weight: 300;
+  }
+
+  @media (max-width: 980px) {
+    .number {
+      font-size: 30px;
+    }
+
+    .text {
+      font-size: 15px;
+    }
   }
 `;

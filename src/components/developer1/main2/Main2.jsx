@@ -73,8 +73,8 @@ export const Main2 = ({ whoRef }) => {
 const Container = styled("div")`
   display: flex;
   justify-content: center;
-
-  margin-top: 15rem;
+  margin-top: 10rem;
+  padding: 0 3rem 0 3rem;
 
   h1 {
     text-align: center;
@@ -115,11 +115,17 @@ const Block = styled("div")`
       color: #a238ff;
     }
   }
+
+  @media (max-width: 860px) {
+    p {
+      width: 100%;
+    }
+  }
 `;
 
 const Block1 = styled("div")`
   img {
-    width: 30vw;
+    width: 25rem;
   }
 `;
 
@@ -128,4 +134,9 @@ const ContainerBlock = styled("div")`
   align-items: center;
   gap: 3rem;
   margin-top: 4rem;
+
+  @media (max-width: 860px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;

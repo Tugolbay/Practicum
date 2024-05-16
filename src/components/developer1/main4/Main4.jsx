@@ -52,7 +52,8 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
+  padding: 0 3rem 0 3rem;
   h1 {
     color: white;
     font-weight: 600;

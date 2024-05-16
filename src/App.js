@@ -5,6 +5,7 @@ import { Main2 } from "./components/developer1/main2/Main2";
 import { Main3 } from "./components/developer1/main3/Main3";
 import { Main4 } from "./components/developer1/main4/Main4";
 import { Main5 } from "./components/developer1/main5/Main5";
+import { Main6 } from "./components/developer1/main6/Main6";
 
 function App() {
   const whoRef = useRef(null);
@@ -35,6 +36,8 @@ function App() {
       <Main3 />
       <Main4 placeRef={placeRef} />
       <Main5 spicerRef={spicerRef} />
+
+      <Main6 />
     </div>
   );
 }

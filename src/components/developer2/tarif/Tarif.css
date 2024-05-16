@@ -1,0 +1,17 @@
+.razmer {
+  @media (max-width: 1300px) {
+    height: 290vh;
+  }
+  @media (max-width: 1120px) {
+    height: 340vh;
+  }
+  @media (max-width: 1040px) {
+    height: 400vh;
+  }
+  @media (max-width: 550px) {
+    height: 410vh;
+  }
+  @media (max-width: 400px) {
+    height: 430vh;
+  }
+}
