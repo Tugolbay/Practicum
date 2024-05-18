@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaStar } from "react-icons/fa6";
-import { FaArrowLeft } from "react-icons/fa";
+// import { FaArrowLeft } from "react-icons/fa";
 
 export const Main10 = () => {
   return (
@@ -55,7 +55,7 @@ export const Main10 = () => {
           </div>
         </Block2>
       </Container>
-
+      {/* 
       <div style={{ paddingLeft: "3rem", marginTop: "2rem" }}>
         <Modal>
           <p>
@@ -80,7 +80,7 @@ export const Main10 = () => {
             </p>
           </div>
         </Modal>
-      </div>
+      </div> */}
     </Main>
   );
 };
@@ -151,25 +151,25 @@ const Raiting = styled("div")`
   }
 `;
 
-const Modal = styled("div")`
-  width: 35vw;
-  padding: 1rem;
-  border-radius: 15px;
-  background-color: red;
+// const Modal = styled("div")`
+//   width: 35vw;
+//   padding: 1rem;
+//   border-radius: 15px;
+//   background-color: red;
 
-  p {
-    color: white;
-  }
-`;
+//   p {
+//     color: white;
+//   }
+// `;
 
-const Btn = styled("div")`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 15vw;
-  height: 3rem;
-  border: 1px solid white;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-`;
+// const Btn = styled("div")`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 15vw;
+//   height: 3rem;
+//   border: 1px solid white;
+//   border-radius: 20px;
+//   color: white;
+//   cursor: pointer;
+// `;
