@@ -37,7 +37,6 @@ function App() {
       <Main3 tarifRef={tarifRef} />
       <Main4 placeRef={placeRef} />
       <Main5 spicerRef={spicerRef} />
-
       <Main6 tarif={tarifRef} />
       <Main7 bonusRef={bonusRef} tarifRef={tarifRef} />
       <Main8 />

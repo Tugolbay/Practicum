@@ -22,7 +22,7 @@ export const Main6 = ({ tarif }) => {
           <div>
             <p>Стоимость</p>
             <p>1 490 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="bgc-button">
+            <button onClick={() => setOpen(true)} className="button">
               УЧАСТВОВАТЬ
             </button>
           </div>
@@ -39,9 +39,9 @@ export const Main6 = ({ tarif }) => {
           </ul>
 
           <div>
-            <p>Стоимость на одного участника</p>
+            <p>Стоимость</p>
             <p>2 590 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="bgc-button">
+            <button onClick={() => setOpen(true)} className="button">
               УЧАСТВОВАТЬ
             </button>
           </div>
@@ -65,7 +65,7 @@ export const Main6 = ({ tarif }) => {
           <div>
             <p>Стоимость</p>
             <p>15 000 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="bgc-button">
+            <button onClick={() => setOpen(true)} className="button">
               УЧАСТВОВАТЬ
             </button>
           </div>
@@ -124,6 +124,11 @@ const Block = styled("div")`
   display: flex;
   gap: 4rem;
   margin-top: 5rem;
+
+  @media (max-width: 970px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Row1 = styled("div")`
@@ -146,8 +151,7 @@ const Row1 = styled("div")`
     gap: 1.5rem;
     color: white;
     font-size: 18px;
-
-    height: 70vh;
+    height: 35rem;
   }
 
   div {
@@ -161,7 +165,51 @@ const Row1 = styled("div")`
       color: white;
       font-size: 30px;
       font-weight: 600;
-      height: 10vh;
+    }
+  }
+
+  .button {
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ad);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    border-radius: 10px;
+    width: 12rem;
+    height: 4rem;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+
+  @keyframes color {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+  @media (max-width: 970px) {
+    width: 25rem;
+
+    ul {
+      height: 25rem;
+    }
+  }
+
+  @media (max-width: 460px) {
+    width: 22rem;
+  }
+
+  @media (max-width: 400px) {
+    width: 18rem;
+
+    div {
+      padding-top: 10rem;
     }
   }
 `;

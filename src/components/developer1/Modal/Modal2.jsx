@@ -120,6 +120,18 @@ const Block = styled("div")`
       border: 2px solid blue;
     }
   }
+
+  @media (max-width: 500px) {
+    h3 {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
 `;
 
 const Row = styled("div")`
@@ -135,15 +147,33 @@ const Row = styled("div")`
 const InputBlock = styled("div")`
   display: flex;
   flex-direction: column;
-  width: 45%;
   gap: 2.5rem;
   margin-top: 2rem;
 
   input {
-    width: 100%;
+    width: 25rem;
     height: 3rem;
     padding-left: 1.5rem;
     border-radius: 10px;
     border: 1px solid black;
+  }
+
+  @media (max-width: 760px) {
+    input {
+      width: 20rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    input {
+      width: 15rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    input {
+      width: 12rem;
+      height: 2rem;
+    }
   }
 `;

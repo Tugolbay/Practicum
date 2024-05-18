@@ -5,7 +5,7 @@ export const Map = () => {
   return (
     <Container>
       <IFrame
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1420.3162089274797!2d74.58587593247343!3d42.87202971820552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec8241b52669f%3A0xb8b43841ad54c50b!2zMjkg0YPQu9C40YbQsCDQotCw0LHRi9GI0LDQu9C40LXQstCwLCDQkdC40YjQutC10Lo!5e0!3m2!1sru!2skg!4v1715240530731!5m2!1sru!2skg"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.4680165521168!2d37.67631967682371!3d55.71561829485463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ab4d501fa26e5%3A0x2a349e7d073f290f!2skidsteen%20ru!5e0!3m2!1sru!2skg!4v1716040613414!5m2!1sru!2skg"
         allowfullscreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

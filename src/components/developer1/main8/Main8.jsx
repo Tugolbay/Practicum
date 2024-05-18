@@ -37,6 +37,7 @@ export const Main8 = () => {
           консультацией специалиста
         </p>
       </Block>
+
       <Block2>
         <input
           value={inp2}
@@ -87,6 +88,11 @@ const Container = styled("form")`
   gap: 8rem;
   margin-top: 10rem;
   padding: 0 5rem 0 5rem;
+
+  @media (max-width: 1100px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Block = styled("div")`
@@ -102,6 +108,32 @@ const Block = styled("div")`
     width: 30rem;
     font-size: 25px;
     color: white;
+  }
+
+  @media (max-width: 599px) {
+    h2 {
+      width: 100%;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    p {
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 490px) {
+    h2 {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 12px;
+      text-align: center;
+    }
   }
 `;
 
@@ -120,6 +152,40 @@ const Block2 = styled("div")`
     border-radius: 15px;
     padding-left: 1rem;
   }
+
+  @media (max-width: 1100px) {
+    width: 35rem;
+
+    .input {
+      width: 25rem;
+    }
+  }
+
+  @media (max-width: 650px) {
+    width: 28rem;
+
+    .input {
+      width: 20rem;
+    }
+  }
+
+  @media (max-width: 490px) {
+    width: 23rem;
+
+    .input {
+      width: 15rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    width: 18rem;
+
+    .input {
+      width: 12rem;
+      height: 2rem;
+      border-radius: 8px;
+    }
+  }
 `;
 
 const Button = styled("button")`
@@ -132,6 +198,11 @@ const Button = styled("button")`
   font-size: 20px;
   color: white;
   cursor: pointer;
+
+  @media (max-width: 430px) {
+    font-size: 10px;
+    padding: 1rem 2rem 1rem 2rem;
+  }
 `;
 
 const Checkbox = styled("div")`
@@ -140,7 +211,16 @@ const Checkbox = styled("div")`
   gap: 1rem;
 
   a {
-    color: blue;
+    color: #006aff;
+  }
+
+  @media (max-width: 430px) {
+    a {
+      font-size: 13px;
+    }
+    p {
+      font-size: 13px;
+    }
   }
 `;
 

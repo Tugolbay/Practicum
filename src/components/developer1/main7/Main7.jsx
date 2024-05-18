@@ -21,7 +21,6 @@ export const Main7 = ({ bonusRef, tarifRef }) => {
               Гайд «10 фишек по продвижению товара, чтобы быть впереди
               конкурентов»
             </p>
-
             <div>
               <button
                 onClick={() =>
@@ -59,7 +58,10 @@ const Container = styled("div")`
     font-family: "NeueMachina", Arial, sans-serif;
     font-weight: 100;
     text-align: center;
-    width: 50rem;
+  }
+
+  @media (max-width: 530px) {
+    font-size: 20px;
   }
 `;
 
@@ -67,7 +69,6 @@ const Block = styled("div")`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 60rem;
   background-color: white;
   border-radius: 20px;
   margin-top: 6rem;
@@ -86,7 +87,6 @@ const Block = styled("div")`
 
   p {
     font-size: 25px;
-    width: 28rem;
   }
 
   @media (max-width: 1145px) {
@@ -94,15 +94,55 @@ const Block = styled("div")`
       font-size: 45px;
     }
   }
+
+  @media (max-width: 950px) {
+    h3 {
+      font-size: 35px;
+    }
+  }
+
+  @media (max-width: 826px) {
+    p {
+      font-size: 20px;
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    h3 {
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 590px) {
+    padding: 2rem;
+    h3 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
 `;
 
 const Row1 = styled("div")`
   display: flex;
   align-items: center;
+
+  @media (max-width: 750px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 const Column = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 5rem;
+
+  @media (max-width: 600px) {
+    gap: 1rem;
+  }
 `;

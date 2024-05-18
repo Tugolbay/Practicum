@@ -10,18 +10,43 @@ export const Main12 = () => {
       <h2>Подписывайтесь на наши соцсети</h2>
 
       <div>
-        <Instagram href="https://www.instagram.com/leoshev4enko/?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
+        <Instagram
+          target="_blank"
+          href="https://www.instagram.com/leoshev4enko/?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+        >
           <IoLogoInstagram size={30} color="white" />
         </Instagram>
-        <Telegram href="https://t.me/namarketplacewithleo?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZ">
+        <Telegram
+          target="_blank"
+          href="https://t.me/namarketplacewithleo?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZ"
+        >
           <PiTelegramLogoBold size={30} color="white" />
         </Telegram>
-        <VContact href="https://vk.com/leoshev4enkoschool?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"></VContact>
+        <VContact
+          target="_blank"
+          href="https://vk.com/leoshev4enkoschool?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+        >
+          <img
+            src="https://miro.medium.com/v2/resize:fit:1400/0*GQ4iLS60mTr7aR_Z"
+            alt="img"
+          />
+        </VContact>
       </div>
 
       <div>
-        <Square href="https://dzen.ru/leoshev44enko?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"></Square>
-        <Youtube href="https://www.youtube.com/channel/UCAy8eLRvaazCC5erOqAvIgw?ybp=-gEHYmlvX0xlbw%253D%253D">
+        <Square
+          target="_blank"
+          href="https://dzen.ru/leoshev44enko?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+        >
+          <img
+            src="https://timeweb.com/ru/community/article/e5/e505c6b384e407982cbd3ca02ee1ab80.jpg"
+            alt="img"
+          />
+        </Square>
+        <Youtube
+          target="_blank"
+          href="https://www.youtube.com/channel/UCAy8eLRvaazCC5erOqAvIgw?ybp=-gEHYmlvX0xlbw%253D%253D"
+        >
           <FaYoutube size={30} color="white" />
         </Youtube>
       </div>
@@ -57,6 +82,12 @@ const Container = styled("div")`
     color: white;
     font-size: 17px;
     margin-top: 2rem;
+  }
+
+  @media (max-width: 500px) {
+    h2 {
+      font-size: 40px;
+    }
   }
 `;
 
@@ -94,6 +125,10 @@ const VContact = styled("div")`
   height: 4.5rem;
   border-radius: 10px;
   background-color: #0077ff;
+
+  img {
+    width: 7rem;
+  }
 `;
 
 const Square = styled("div")`
@@ -106,6 +141,10 @@ const Square = styled("div")`
   border-radius: 10px;
   background-color: #000;
   cursor: pointer;
+
+  img {
+    width: 7rem;
+  }
 `;
 
 const Youtube = styled("a")`

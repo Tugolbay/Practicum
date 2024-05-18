@@ -17,7 +17,7 @@ export const Main10 = () => {
         </Block>
 
         <Block2>
-          <div>
+          <Raiting1>
             <Raiting>
               <p>ТОП-5</p>
               <div>
@@ -36,9 +36,9 @@ export const Main10 = () => {
               src="https://optim.tildacdn.com/tild3635-3464-4832-b264-343266623634/-/resize/280x/-/format/webp/_.png"
               alt="img"
             />
-          </div>
+          </Raiting1>
 
-          <div>
+          <Raiting2>
             <img
               src="https://optim.tildacdn.com/tild6335-6334-4462-a233-383862653835/-/resize/280x/-/format/webp/_.png"
               alt="img"
@@ -52,7 +52,7 @@ export const Main10 = () => {
               src="https://optim.tildacdn.com/tild3138-3630-4335-b738-316137373664/-/resize/280x/-/format/webp/__1.png"
               alt="img"
             />
-          </div>
+          </Raiting2>
         </Block2>
       </Container>
       {/* 
@@ -94,7 +94,13 @@ const Container = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8rem;
+
+  @media (max-width: 1060px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 `;
 
 const Block = styled("div")`
@@ -108,9 +114,31 @@ const Block = styled("div")`
 
   p {
     color: white;
-    width: 30vw;
+    width: 26rem;
     font-size: 20px;
     margin-top: 3rem;
+  }
+
+  @media (max-width: 1060px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 610px) {
+    h1 {
+      width: 100%;
+      font-size: 40px;
+    }
+    p {
+      width: 100%;
+      font-size: 16px;
+      text-align: center;
+    }
   }
 `;
 
@@ -118,19 +146,24 @@ const Block2 = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40vw;
-  height: 25rem;
   border-radius: 20px;
   background-color: #141c24;
   padding: 2rem;
 
   img {
-    width: 8vw;
+    width: 8rem;
   }
 
-  div {
+  @media (max-width: 1060px) {
+    img {
+      width: 5rem;
+    }
+  }
+
+  @media (max-width: 610px) {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 2rem;
   }
 `;
 
@@ -148,6 +181,33 @@ const Raiting = styled("div")`
   div {
     display: flex;
     gap: 0.5rem;
+  }
+
+  @media (max-width: 610px) {
+    p {
+      font-size: 25px;
+    }
+  }
+`;
+
+const Raiting1 = styled("div")`
+  display: flex;
+  gap: 3rem;
+
+  @media (max-width: 610px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+const Raiting2 = styled("div")`
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+
+  @media (max-width: 610px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 

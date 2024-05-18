@@ -34,6 +34,11 @@ const Container = styled("div")`
   gap: 8rem;
   margin-top: 10rem;
   padding: 0 5rem 0 5rem;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Block = styled("div")`
@@ -41,14 +46,22 @@ const Block = styled("div")`
     color: white;
     font-size: 50px;
     font-weight: 600;
-    width: 45rem;
   }
 
   p {
     margin-top: 1rem;
-    width: 30rem;
     font-size: 25px;
     color: white;
+  }
+
+  @media (max-width: 1000px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -63,4 +76,13 @@ const Button = styled("button")`
   color: white;
   cursor: pointer;
   margin-top: 3rem;
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  @media (max-width: 413px) {
+    font-size: 12px;
+  }
 `;

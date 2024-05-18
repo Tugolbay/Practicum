@@ -356,4 +356,20 @@ const Infocart = styled("div")`
       color: #7200a0;
     }
   }
+
+  @media (max-width: 1000px) {
+    ul {
+      li {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    ul {
+      li {
+        font-size: 8px;
+      }
+    }
+  }
 `;

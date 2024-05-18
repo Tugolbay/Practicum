@@ -143,6 +143,18 @@ const Block = styled("div")`
     &:hover {
       background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ad);
     }
+
+    @media (max-width: 543px) {
+      font-size: 10px;
+      width: 10rem;
+      height: 2.5rem;
+    }
+  }
+
+  @media (max-width: 543px) {
+    h3 {
+      text-align: center;
+    }
   }
 `;
 
@@ -154,6 +166,15 @@ const Row = styled("div")`
   a {
     color: black;
   }
+
+  @media (max-width: 950px) {
+    p {
+      font-size: 10px;
+    }
+    a {
+      font-size: 10px;
+    }
+  }
 `;
 
 const InputBlock = styled("div")`
@@ -162,4 +183,12 @@ const InputBlock = styled("div")`
   width: 45%;
   gap: 2.5rem;
   margin-top: 2rem;
+
+  @media (max-width: 950px) {
+    width: 55%;
+  }
+
+  @media (max-width: 543px) {
+    gap: 1rem;
+  }
 `;

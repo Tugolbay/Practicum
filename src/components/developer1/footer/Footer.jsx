@@ -6,53 +6,69 @@ import { BsTelephoneX } from "react-icons/bs";
 export const Footer = () => {
   return (
     <Container>
-      <Row1>
-        <img
-          src="https://static.tildacdn.com/tild6631-6138-4330-b939-346562303661/__1.svg"
-          alt="img"
-        />
+      <BlockRow>
+        <Row1>
+          <img
+            src="https://static.tildacdn.com/tild6631-6138-4330-b939-346562303661/__1.svg"
+            alt="img"
+          />
 
-        <Desc>ООО "МЕРКАТУС" ИНН: 9723158300, ОГРН: 1227700373768.</Desc>
+          <Desc>ООО "МЕРКАТУС" ИНН: 9723158300, ОГРН: 1227700373768.</Desc>
 
-        <Link>
-          <a href="https://merkatys.ru/tech?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
-            Техническая инструкция
-          </a>
-          <a href="https://merkatys.ru/doc?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
-            Документация
-          </a>
-        </Link>
-      </Row1>
+          <Link>
+            <a
+              target="_blank"
+              href="https://merkatys.ru/tech?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+            >
+              Техническая инструкция
+            </a>
+            <a
+              target="_blank"
+              href="https://merkatys.ru/doc?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+            >
+              Документация
+            </a>
+          </Link>
+        </Row1>
 
-      <Row2>
-        <Telegram href="https://t.me/leoshevchenko_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
-          <PiTelegramLogoBold size={30} color="white" />
-          <p>Служба заботы</p>
-        </Telegram>
+        <Row2>
+          <Telegram href="https://t.me/leoshevchenko_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
+            <PiTelegramLogoBold size={30} color="white" />
+            <p>Служба заботы</p>
+          </Telegram>
 
-        <Telegram href="https://t.me/merkatus_partners_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
-          <PiTelegramLogoBold size={30} color="white" />
-          <p>Сотрудничество</p>
-        </Telegram>
+          <Telegram href="https://t.me/merkatus_partners_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
+            <PiTelegramLogoBold size={30} color="white" />
+            <p>Сотрудничество</p>
+          </Telegram>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "1rem",
-          }}
-        >
-          <BsTelephoneX size={25} color="white" />
-          <p style={{ color: "#fff" }}>8 800 700-13-52</p>
-        </div>
-      </Row2>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
+            <BsTelephoneX size={25} color="white" />
+            <p style={{ color: "#fff" }}>8 800 700-13-52</p>
+          </div>
+        </Row2>
+      </BlockRow>
 
       <Row3>
         <div>
-          <a href="/">Лицензионный договор оферты</a>
-          <a href="/">Договор оферты</a>
-          <a href="/">Соглашение об участии в партнерской программе</a>
-          <a href="/">Политика обработки персональных данных</a>
+          <a target="_blank" href="/">
+            Лицензионный договор оферты
+          </a>
+          <a target="_blank" href="/">
+            Договор оферты
+          </a>
+          <a target="_blank" href="/">
+            Соглашение об участии в партнерской программе
+          </a>
+          <a target="_blank" href="/">
+            Политика обработки персональных данных
+          </a>
         </div>
 
         <p>
@@ -70,14 +86,24 @@ const Container = styled("footer")`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 3rem 5rem 0 5rem;
+  padding: 3rem 5rem 1rem 5rem;
   margin-top: 10rem;
   background-color: #25293c;
+
+  @media (max-width: 1100px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Desc = styled("p")`
   width: 11rem;
   color: white;
+
+  @media (max-width: 700px) {
+    width: 18rem;
+    font-size: 25px;
+  }
 `;
 
 const Link = styled("div")`
@@ -88,24 +114,57 @@ const Link = styled("div")`
   a {
     text-decoration: underline;
   }
+
+  @media (max-width: 700px) {
+    a {
+      width: 18rem;
+      font-size: 25px;
+    }
+  }
 `;
 
 const Row1 = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
+  @media (max-width: 700px) {
+    align-items: center;
+
+    img {
+      width: 50vw;
+    }
+  }
 `;
 
 const Row2 = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 700px) {
+    align-items: center;
+    margin-top: 3rem;
+  }
 `;
 
 const Row3 = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+
+  @media (max-width: 1100px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+  }
 
   div {
     display: flex;
@@ -136,4 +195,28 @@ const Telegram = styled("a")`
   border: 3px solid white;
   cursor: pointer;
   color: white;
+
+  @media (max-width: 1100px) {
+    width: 12rem;
+  }
+
+  @media (max-width: 700px) {
+    width: 16rem;
+  }
+`;
+
+const BlockRow = styled("div")`
+  display: flex;
+  gap: 8rem;
+  justify-content: space-between;
+
+  @media (max-width: 1100px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
