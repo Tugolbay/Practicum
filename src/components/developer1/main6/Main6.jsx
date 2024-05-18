@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Modal } from "../Modal/Modal";
 
-export const Main6 = () => {
+export const Main6 = ({ tarif }) => {
+  const [open, setOpen] = useState(false);
   return (
-    <Container>
+    <Container ref={tarif}>
       <h1>Выберите формат участия</h1>
 
       <Block>
@@ -20,7 +22,9 @@ export const Main6 = () => {
           <div>
             <p>Стоимость</p>
             <p>1 490 РУБ.</p>
-            <button className="bgc-button">УЧАСТВОВАТЬ</button>
+            <button onClick={() => setOpen(true)} className="bgc-button">
+              УЧАСТВОВАТЬ
+            </button>
           </div>
         </Row1>
 
@@ -37,7 +41,9 @@ export const Main6 = () => {
           <div>
             <p>Стоимость на одного участника</p>
             <p>2 590 РУБ.</p>
-            <button className="bgc-button">УЧАСТВОВАТЬ</button>
+            <button onClick={() => setOpen(true)} className="bgc-button">
+              УЧАСТВОВАТЬ
+            </button>
           </div>
         </Row1>
 
@@ -59,10 +65,14 @@ export const Main6 = () => {
           <div>
             <p>Стоимость</p>
             <p>15 000 РУБ.</p>
-            <button className="bgc-button">УЧАСТВОВАТЬ</button>
+            <button onClick={() => setOpen(true)} className="bgc-button">
+              УЧАСТВОВАТЬ
+            </button>
           </div>
         </Row1>
       </Block>
+
+      {open && <Modal setOpen={setOpen} />}
     </Container>
   );
 };

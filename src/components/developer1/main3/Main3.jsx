@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Main3 = () => {
+export const Main3 = ({ tarifRef }) => {
   return (
     <Mains>
       <Container>
@@ -62,7 +62,15 @@ export const Main3 = () => {
             marginTop: "5rem",
           }}
         >
-          <button className="bgc-button">УЧАСТВОВАТЬ</button>
+          <button
+            onClick={() =>
+              tarifRef.current &&
+              tarifRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bgc-button"
+          >
+            УЧАСТВОВАТЬ
+          </button>
         </div>
       </Container>
     </Mains>

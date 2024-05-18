@@ -22,7 +22,7 @@ const data = [
   },
 ];
 
-export const Main = ({ resultRef }) => {
+export const Main = ({ resultRef, tarifRef }) => {
   return (
     <Mains ref={resultRef}>
       <Container>
@@ -64,7 +64,15 @@ export const Main = ({ resultRef }) => {
             marginTop: "5rem",
           }}
         >
-          <button className="bgc-button">УЧАСТВОВАТЬ</button>
+          <button
+            onClick={() =>
+              tarifRef.current &&
+              tarifRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bgc-button"
+          >
+            УЧАСТВОВАТЬ
+          </button>
         </div>
       </Container>
     </Mains>

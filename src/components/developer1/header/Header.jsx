@@ -9,12 +9,9 @@ export const Header = ({
   whoRef,
   resultRef,
   placeRef,
-  spicerRef,
-  formatRef,
-  liveRef,
   tarifRef,
-  answersRef,
-  footerRef,
+  bonusRef,
+  spicerRef,
 }) => {
   const [showInfocart, setShowInfocart] = useState(false);
 
@@ -45,14 +42,12 @@ export const Header = ({
         >
           Тарифы
         </p>
-        <p
-          onClick={() =>
-            footerRef.current &&
-            footerRef.current.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          MEPKATYC
-        </p>
+
+        <img
+          style={{ cursor: "pointer" }}
+          src="https://optim.tildacdn.com/tild6334-3163-4539-b930-303333613562/-/resize/568x/-/format/webp/_____1.png"
+          alt="img"
+        />
         <p
           onClick={() =>
             spicerRef.current &&
@@ -71,8 +66,8 @@ export const Header = ({
         </p>
         <p
           onClick={() =>
-            liveRef.current &&
-            liveRef.current.scrollIntoView({ behavior: "smooth" })
+            bonusRef.current &&
+            bonusRef.current.scrollIntoView({ behavior: "smooth" })
           }
         >
           Бонусы
@@ -102,7 +97,15 @@ export const Header = ({
 
       <Block3>
         <div>
-          <button className="bgc-button">УЧАСТВОВАТЬ</button>
+          <button
+            onClick={() =>
+              tarifRef.current &&
+              tarifRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bgc-button"
+          >
+            УЧАСТВОВАТЬ
+          </button>
         </div>
 
         <Count>
