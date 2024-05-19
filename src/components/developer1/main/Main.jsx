@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 import "../../Hell.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const data = [
   {
@@ -23,23 +25,29 @@ const data = [
 ];
 
 export const Main = ({ resultRef, tarifRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Mains ref={resultRef}>
       <Container>
-        <h1>
+        <h1 data-aos="fade-right">
           <strong>ГЛАВНАЯ ЦЕЛЬ</strong> ПРАКТИКУМА
         </h1>
-        <h3>
+        <h3 data-aos="fade-right">
           СОЗДАТЬ ПРОСТРАНСТВО, В КОТОРОМ РОСТ КАЖДОГО УЧАСТНИКА НЕИЗБЕЖЕН
         </h3>
 
         <Block>
           <Title>
-            <p>Самая актуальная информация по маркетплейсам</p>
-            <p>Сильнейшие селлеры в одном месте</p>
-            <p>Нетворкинг и новые полезные знакомства</p>
-            <p>Возможность участия из любой точки мира</p>
-            <p>Подарки и призы от партнеров</p>
+            <p data-aos="fade-right">
+              Самая актуальная информация по маркетплейсам
+            </p>
+            <p data-aos="fade-right">Сильнейшие селлеры в одном месте</p>
+            <p data-aos="fade-right">Нетворкинг и новые полезные знакомства</p>
+            <p data-aos="fade-right">Возможность участия из любой точки мира</p>
+            <p data-aos="fade-right">Подарки и призы от партнеров</p>
           </Title>
 
           <div className="slide-container  slider">
@@ -65,6 +73,7 @@ export const Main = ({ resultRef, tarifRef }) => {
           }}
         >
           <button
+            data-aos="fade-down"
             onClick={() =>
               tarifRef.current &&
               tarifRef.current.scrollIntoView({ behavior: "smooth" })
