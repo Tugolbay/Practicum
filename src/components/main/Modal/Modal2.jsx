@@ -45,6 +45,7 @@ export const Modal2 = ({ setOpen }) => {
           </p>
           <InputBlock>
             <input
+              required
               value={inp2}
               onChange={(e) => setInp2(e.target.value)}
               name="name"
@@ -52,6 +53,7 @@ export const Modal2 = ({ setOpen }) => {
               placeholder="Ваше имя"
             />
             <input
+              required
               value={inp}
               onChange={(e) => setInp(e.target.value)}
               name="email"
@@ -59,6 +61,7 @@ export const Modal2 = ({ setOpen }) => {
               placeholder="email"
             />
             <input
+              required
               value={inp3}
               onChange={(e) => setInp3(e.target.value)}
               name="number"

@@ -51,6 +51,7 @@ export const Modal = ({ setOpen }) => {
               id="standard-basic"
               label="Введите ваш эл.адрес"
               variant="standard"
+              required
             />
             <TextField
               value={inp2}
@@ -59,6 +60,7 @@ export const Modal = ({ setOpen }) => {
               id="standard-basic"
               label="Введите ваше имя"
               variant="standard"
+              required
             />
             <TextField
               name="number"
@@ -68,6 +70,7 @@ export const Modal = ({ setOpen }) => {
               label="Введите ваш телефон"
               variant="standard"
               className="inputs"
+              required
             />
           </InputBlock>
 
@@ -76,7 +79,7 @@ export const Modal = ({ setOpen }) => {
           </button>
 
           <div className="checkBlock">
-            <input type="checkbox" />
+            <input type="checkbox" className="checkbox" />
             <p>
               Я согласен(а) с условиями{" "}
               <a href="https://merkatys.ru/policy">
@@ -168,11 +171,10 @@ const Row = styled("div")`
     width: 25rem;
     gap: 1rem;
     margin-top: 2rem;
-
-    input {
-      width: 1.2rem;
-      height: 1.2rem;
-    }
+  }
+  .checkbox {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   @media (max-width: 579px) {
@@ -185,6 +187,11 @@ const Row = styled("div")`
 
     a {
       font-size: 12px;
+    }
+
+    .checkbox {
+      width: 3.5rem;
+      height: 3.5rem;
     }
   }
 `;
