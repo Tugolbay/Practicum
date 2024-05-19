@@ -1,18 +1,18 @@
 import { useRef } from "react";
-import { Header } from "./components/developer1/header/Header";
-import { Main } from "./components/developer1/main/Main";
-import { Main2 } from "./components/developer1/main2/Main2";
-import { Main3 } from "./components/developer1/main3/Main3";
-import { Main4 } from "./components/developer1/main4/Main4";
-import { Main5 } from "./components/developer1/main5/Main5";
-import { Main6 } from "./components/developer1/main6/Main6";
-import { Main7 } from "./components/developer1/main7/Main7";
-import { Main8 } from "./components/developer1/main8/Main8";
-import { Main9 } from "./components/developer1/main9/Main9";
-import { Main10 } from "./components/developer1/main10/Main10";
-import { Main11 } from "./components/developer1/main11/Main11";
-import { Main12 } from "./components/developer1/main12/Main12";
-import { Footer } from "./components/developer1/footer/Footer";
+import { Header } from "./components/layout/header/Header";
+import { Target } from "./components/main/target/Target";
+import { Opportunity } from "./components/main/opportunity/Opportunity";
+import { Program } from "./components/main/program/Program";
+import { Location } from "./components/main/location/Location";
+import { MainSpeaker } from "./components/main/mainSpeaker/MainSpeaker";
+import { BuyTickets } from "./components/main/tickets/BuyTickets";
+import { Rate } from "./components/main/rate/Rate";
+import { Partner } from "./components/main/partner/Partner";
+import { Manager } from "./components/main/manager/Manager";
+import { Questions } from "./components/main/questions/Questions";
+import { SocialNetwork } from "./components/main/socialNetwork/SocialNetwork";
+import { Footer } from "./components/layout/footer/Footer";
+import { Format } from "./components/main/format/Format";
 
 function App() {
   const whoRef = useRef(null);
@@ -32,18 +32,18 @@ function App() {
         tarifRef={tarifRef}
         bonusRef={bonusRef}
       />
-      <Main resultRef={resultRef} tarifRef={tarifRef} />
-      <Main2 whoRef={whoRef} />
-      <Main3 tarifRef={tarifRef} />
-      <Main4 placeRef={placeRef} />
-      <Main5 spicerRef={spicerRef} />
-      <Main6 tarif={tarifRef} />
-      <Main7 bonusRef={bonusRef} tarifRef={tarifRef} />
-      <Main8 />
-      <Main9 />
-      <Main10 />
-      <Main11 />
-      <Main12 />
+      <Target resultRef={resultRef} tarifRef={tarifRef} />
+      <Opportunity whoRef={whoRef} />
+      <Program tarifRef={tarifRef} />
+      <Location placeRef={placeRef} />
+      <MainSpeaker spicerRef={spicerRef} />
+      <Format tarif={tarifRef} />
+      <BuyTickets bonusRef={bonusRef} tarifRef={tarifRef} />
+      <Rate />
+      <Partner />
+      <Manager />
+      <Questions />
+      <SocialNetwork />
       <Footer />
     </div>
   );

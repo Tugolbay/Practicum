@@ -67,6 +67,7 @@ export const Modal = ({ setOpen }) => {
               id="standard-basic"
               label="Введите ваш телефон"
               variant="standard"
+              className="inputs"
             />
           </InputBlock>
 
@@ -74,16 +75,9 @@ export const Modal = ({ setOpen }) => {
             Записаться
           </button>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "1rem",
-              marginTop: "2rem",
-            }}
-          >
+          <div className="checkBlock">
             <input type="checkbox" />
-            <p style={{ width: "20vw" }}>
+            <p>
               Я согласен(а) с условиями{" "}
               <a href="https://merkatys.ru/policy">
                 Политики конфиденциальности, хранения и обработки персональных
@@ -144,17 +138,17 @@ const Block = styled("div")`
       background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ad);
     }
 
-    @media (max-width: 543px) {
-      font-size: 10px;
-      width: 10rem;
-      height: 2.5rem;
+    @media (max-width: 579px) {
+      height: 3rem;
     }
   }
 
-  @media (max-width: 543px) {
-    h3 {
-      text-align: center;
-    }
+  @media (max-width: 690px) {
+    width: 30rem;
+  }
+
+  @media (max-width: 495px) {
+    width: 20rem;
   }
 `;
 
@@ -167,12 +161,30 @@ const Row = styled("div")`
     color: black;
   }
 
-  @media (max-width: 950px) {
-    p {
-      font-size: 10px;
+  .checkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    input {
+      width: 1.2rem;
+      height: 1.2rem;
     }
+  }
+
+  @media (max-width: 579px) {
+    .checkBlock {
+      width: 15rem;
+    }
+    p {
+      font-size: 12px;
+    }
+
     a {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 `;
@@ -184,11 +196,27 @@ const InputBlock = styled("div")`
   gap: 2.5rem;
   margin-top: 2rem;
 
-  @media (max-width: 950px) {
-    width: 55%;
+  .MuiInputBase-root-MuiInput-root {
+    color: white;
   }
 
-  @media (max-width: 543px) {
+  .MuiInput-root {
+    color: white;
+  }
+  .MuiInputLabel-root {
+    color: white;
+  }
+
+  @media (max-width: 690px) {
+    width: 20rem;
+  }
+
+  @media (max-width: 579px) {
+    width: 15rem;
     gap: 1rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12rem;
   }
 `;

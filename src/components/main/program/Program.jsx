@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Main3 = ({ tarifRef }) => {
+export const Program = ({ tarifRef }) => {
   return (
     <Mains>
       <Container>
@@ -130,6 +130,12 @@ const Border1 = styled("div")`
     font-weight: 400;
   }
 
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+
   @media (max-width: 960px) {
     h3 {
       font-size: 25px;
@@ -145,6 +151,10 @@ const Border1 = styled("div")`
     h3 {
       font-size: 20px;
     }
+  }
+
+  @media (max-width: 400px) {
+    gap: 2rem;
   }
 `;
 
@@ -169,9 +179,9 @@ const Border1Childe = styled("ul")`
   list-style-type: disc;
   gap: 1rem;
 
-  @media (max-width: 960px) {
-    p {
-      font-size: 12px;
+  @media (max-width: 400px) {
+    li {
+      font-size: 10px;
     }
   }
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Main7 = ({ bonusRef, tarifRef }) => {
+export const BuyTickets = ({ bonusRef, tarifRef }) => {
   return (
     <Container ref={bonusRef}>
       <h2>
@@ -57,11 +57,14 @@ const Container = styled("div")`
     color: #ffffff;
     font-family: "NeueMachina", Arial, sans-serif;
     font-weight: 100;
-    text-align: center;
   }
 
   @media (max-width: 530px) {
-    font-size: 20px;
+    padding: 0 2rem 0 2rem;
+
+    h2 {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -129,6 +132,12 @@ const Block = styled("div")`
 const Row1 = styled("div")`
   display: flex;
   align-items: center;
+
+  @media (max-width: 900px) {
+    img {
+      width: 80rem;
+    }
+  }
 
   @media (max-width: 750px) {
     img {

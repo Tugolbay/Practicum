@@ -16,3 +16,126 @@ code {
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.bgc-button {
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ad);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+  border-radius: 10px;
+  padding: 1.5rem 5rem 1.5rem 5rem;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 840px) {
+  .bgc-button {
+    padding: 1rem 3rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 545px) {
+  .bgc-button {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 545px) {
+  .bgc-button {
+    font-size: 14px;
+  }
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.bgc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 1rem;
+  color: white;
+  width: 18rem;
+  height: 2.5rem;
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ad);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+@media (max-width: 720px) {
+  .bgc-container {
+    width: 12rem;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 545px) {
+  .bgc-container {
+    width: 8rem;
+    font-size: 6px;
+  }
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.bgc-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 15rem;
+  height: 2.5rem;
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ad);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+@media (max-width: 720px) {
+  .bgc-container2 {
+    width: 12rem;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 545px) {
+  .bgc-container2 {
+    width: 8rem;
+    font-size: 6px;
+  }
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

@@ -6,7 +6,7 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { TbMoneybag } from "react-icons/tb";
 import { FaSearch } from "react-icons/fa";
 
-export const Main2 = ({ whoRef }) => {
+export const Opportunity = ({ whoRef }) => {
   return (
     <Container ref={whoRef}>
       <div>
@@ -77,7 +77,6 @@ const Container = styled("div")`
   padding: 0 3rem 0 3rem;
 
   h1 {
-    text-align: center;
     color: white;
     font-weight: 600;
     font-size: 60px;
@@ -119,6 +118,12 @@ const Block = styled("div")`
   @media (max-width: 860px) {
     p {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    p {
+      font-size: 15px;
     }
   }
 `;

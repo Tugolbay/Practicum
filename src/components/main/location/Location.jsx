@@ -6,7 +6,7 @@ import { PiTramBold } from "react-icons/pi";
 import "leaflet/dist/leaflet.css";
 import { Map } from "./Map";
 
-export const Main4 = ({ placeRef }) => {
+export const Location = ({ placeRef }) => {
   return (
     <Container ref={placeRef}>
       <h1>МЕСТО ПРОВЕДЕНИЯ ПРАКТИКУМА</h1>
@@ -14,6 +14,18 @@ export const Main4 = ({ placeRef }) => {
       <div>
         <div>
           <h3>ДВОРЕЦ КУЛЬТУРЫ</h3>
+          <ImageRow>
+            <Image
+              src="https://optim.tildacdn.com/tild3739-3666-4535-a336-333630623864/-/cover/506x310/center/center/-/format/webp/image.png"
+              alt="img"
+            />
+
+            <Image
+              src="https://optim.tildacdn.com/tild6333-6462-4432-b432-656261626661/-/cover/506x298/center/center/-/format/webp/image.png"
+              alt="img"
+            />
+          </ImageRow>
+
           <Row1>
             <Title>
               <FaLocationDot size={30} color="rgba(148, 41, 232, 1)" />
@@ -28,18 +40,6 @@ export const Main4 = ({ placeRef }) => {
               <p>МЦК Дубровка 172 м (пешком)</p>
             </Title>
           </Row1>
-
-          <ImageRow>
-            <Image
-              src="https://optim.tildacdn.com/tild3739-3666-4535-a336-333630623864/-/cover/506x310/center/center/-/format/webp/image.png"
-              alt="img"
-            />
-
-            <Image
-              src="https://optim.tildacdn.com/tild6333-6462-4432-b432-656261626661/-/cover/506x298/center/center/-/format/webp/image.png"
-              alt="img"
-            />
-          </ImageRow>
 
           <Map />
         </div>

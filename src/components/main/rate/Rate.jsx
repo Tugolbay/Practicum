@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 
-export const Main8 = () => {
+export const Rate = () => {
   const [inp, setInp] = useState("");
   const [inp2, setInp2] = useState("");
   const [inp3, setInp3] = useState("");
@@ -93,6 +93,11 @@ const Container = styled("form")`
     display: flex;
     flex-direction: column;
   }
+
+  @media (max-width: 530px) {
+    gap: 4rem;
+    padding: 0 2rem 0 2rem;
+  }
 `;
 
 const Block = styled("div")`
@@ -114,25 +119,17 @@ const Block = styled("div")`
     h2 {
       width: 100%;
       font-size: 40px;
-      text-align: center;
     }
 
     p {
       width: 100%;
       font-size: 20px;
-      text-align: center;
     }
   }
 
   @media (max-width: 490px) {
     h2 {
       font-size: 32px;
-      text-align: center;
-    }
-
-    p {
-      font-size: 12px;
-      text-align: center;
     }
   }
 `;
@@ -147,7 +144,7 @@ const Block2 = styled("div")`
   border-radius: 20px;
   background-color: #3d3c3c;
   .input {
-    width: 28vw;
+    width: 29vw;
     height: 3rem;
     border-radius: 15px;
     padding-left: 1rem;
@@ -173,7 +170,9 @@ const Block2 = styled("div")`
     width: 23rem;
 
     .input {
+      border-radius: 7px;
       width: 15rem;
+      height: 2rem;
     }
   }
 
@@ -199,32 +198,55 @@ const Button = styled("button")`
   color: white;
   cursor: pointer;
 
+  @media (max-width: 650px) {
+    font-size: 12px;
+    width: 100%;
+  }
+
   @media (max-width: 430px) {
-    font-size: 10px;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 0;
+    width: 12rem;
+    height: 2.5rem;
   }
 `;
 
 const Checkbox = styled("div")`
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   a {
     color: #006aff;
   }
 
-  @media (max-width: 430px) {
-    a {
-      font-size: 13px;
-    }
+  input {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  @media (max-width: 650px) {
     p {
-      font-size: 13px;
+      font-size: 12px;
     }
+  }
+
+  @media (max-width: 490px) {
+    p {
+      width: 15rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    margin-left: 4.5rem;
   }
 `;
 
 const Desc = styled("p")`
   color: white;
   font-size: 13px;
+
+  @media (max-width: 650px) {
+    font-size: 11px;
+  }
 `;

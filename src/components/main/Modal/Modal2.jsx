@@ -122,6 +122,8 @@ const Block = styled("div")`
   }
 
   @media (max-width: 500px) {
+    width: 25rem;
+
     h3 {
       font-size: 20px;
       text-align: center;
@@ -130,6 +132,14 @@ const Block = styled("div")`
     p {
       font-size: 15px;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 450px) {
+    width: 20rem;
+
+    .btn {
+      height: 3rem;
     }
   }
 `;
@@ -170,9 +180,10 @@ const InputBlock = styled("div")`
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 450px) {
+    gap: 1.5rem;
     input {
-      width: 12rem;
+      width: 15rem;
       height: 2rem;
     }
   }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Modal } from "../Modal/Modal";
 
-export const Main6 = ({ tarif }) => {
+export const Format = ({ tarif }) => {
   const [open, setOpen] = useState(false);
   return (
     <Container ref={tarif}>
@@ -29,25 +29,6 @@ export const Main6 = ({ tarif }) => {
         </Row1>
 
         <Row1>
-          <h3>ОФЛАЙН</h3>
-          <ul>
-            <li>Личное присутствие на мероприятии</li>
-            <li>Запись мероприятия на 14 дней</li>
-            <li>Участие в эфире с разбором карточек от экспертов «Меркатус»</li>
-            <li>Онлайн-сертификат участника</li>
-            <li>Участие в розыгрыше призов</li>
-          </ul>
-
-          <div>
-            <p>Стоимость</p>
-            <p>2 590 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="button">
-              УЧАСТВОВАТЬ
-            </button>
-          </div>
-        </Row1>
-
-        <Row1>
           <h3>VIP</h3>
           <ul>
             <li>Онлайн посещение мероприятия</li>
@@ -65,6 +46,25 @@ export const Main6 = ({ tarif }) => {
           <div>
             <p>Стоимость</p>
             <p>15 000 РУБ.</p>
+            <button onClick={() => setOpen(true)} className="button">
+              УЧАСТВОВАТЬ
+            </button>
+          </div>
+        </Row1>
+
+        <Row1>
+          <h3>ОФЛАЙН</h3>
+          <ul>
+            <li>Личное присутствие на мероприятии</li>
+            <li>Запись мероприятия на 14 дней</li>
+            <li>Участие в эфире с разбором карточек от экспертов «Меркатус»</li>
+            <li>Онлайн-сертификат участника</li>
+            <li>Участие в розыгрыше призов</li>
+          </ul>
+
+          <div>
+            <p>Стоимость</p>
+            <p>2 590 РУБ.</p>
             <button onClick={() => setOpen(true)} className="button">
               УЧАСТВОВАТЬ
             </button>
@@ -108,14 +108,9 @@ const Container = styled("div")`
   }
 
   @media (max-width: 520px) {
+    padding: 0 2rem 0 2rem;
     h1 {
       font-size: 30px;
-    }
-  }
-
-  @media (max-width: 460px) {
-    h1 {
-      font-size: 19px;
     }
   }
 `;
@@ -133,8 +128,9 @@ const Block = styled("div")`
 
 const Row1 = styled("div")`
   width: 25vw;
+  height: 100%;
   background-color: #3d3c3c;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 20px;
 
   h3 {
@@ -151,7 +147,6 @@ const Row1 = styled("div")`
     gap: 1.5rem;
     color: white;
     font-size: 18px;
-    height: 35rem;
   }
 
   div {
@@ -159,7 +154,7 @@ const Row1 = styled("div")`
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    margin-top: 12rem;
+    margin-top: 3rem;
     p {
       text-align: center;
       color: white;
@@ -195,10 +190,6 @@ const Row1 = styled("div")`
 
   @media (max-width: 970px) {
     width: 25rem;
-
-    ul {
-      height: 25rem;
-    }
   }
 
   @media (max-width: 460px) {
@@ -208,8 +199,28 @@ const Row1 = styled("div")`
   @media (max-width: 400px) {
     width: 18rem;
 
+    h3 {
+      font-size: 35px;
+    }
+
+    ul {
+      gap: 0.5rem;
+      li {
+        font-size: 12px;
+      }
+    }
+
+    .button {
+      width: 12rem;
+      height: 3rem;
+      font-size: 12px;
+    }
+
     div {
-      padding-top: 10rem;
+      margin-top: 1rem;
+      p {
+        font-size: 25px;
+      }
     }
   }
 `;

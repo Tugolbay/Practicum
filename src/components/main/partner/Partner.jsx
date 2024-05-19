@@ -2,17 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Modal2 } from "../Modal/Modal2";
 
-export const Main9 = () => {
+export const Partner = () => {
   const [open, setOpen] = useState(false);
   return (
     <Container>
-      <div>
-        <img
-          src="https://optim.tildacdn.com/tild3662-3835-4261-a566-666264383038/-/format/webp/image_22_1.png"
-          alt="img"
-        />
-      </div>
-
       <Block>
         <h2>ХОТИТЕ СТАТЬ ПАРТНЁРОМ МЕРКАТУС?</h2>
         <p>Оставьте заявку, с вами свяжется наша команда и все расскажет</p>
@@ -21,6 +14,13 @@ export const Main9 = () => {
           <Button onClick={() => setOpen(true)}>ХОЧУ СТАТЬ ПАРТНЕРОМ</Button>
         </div>
       </Block>
+
+      <div>
+        <img
+          src="https://optim.tildacdn.com/tild3662-3835-4261-a566-666264383038/-/format/webp/image_22_1.png"
+          alt="img"
+        />
+      </div>
 
       {open && <Modal2 setOpen={setOpen} />}
     </Container>
@@ -38,6 +38,11 @@ const Container = styled("div")`
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (max-width: 500px) {
+    gap: 4rem;
+    padding: 0 2rem 0 2rem;
   }
 `;
 
@@ -61,6 +66,12 @@ const Block = styled("div")`
 
     p {
       font-size: 20px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    h2 {
+      font-size: 30px;
     }
   }
 `;

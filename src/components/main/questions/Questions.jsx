@@ -5,7 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
 
-export const Main11 = () => {
+export const Questions = () => {
   return (
     <Container>
       <Block>
@@ -126,6 +126,10 @@ export const Main11 = () => {
 const Container = styled("div")`
   margin-top: 10rem;
   padding: 0 5rem 0 5rem;
+
+  @media (max-width: 700px) {
+    padding: 0 2rem 0 2rem;
+  }
 `;
 
 const Block = styled("div")`
@@ -138,7 +142,7 @@ const Block = styled("div")`
     padding-bottom: 1rem;
   }
 
-  @media (max-width: 870px) {
+  @media (max-width: 900px) {
     h1 {
       font-size: 40px;
     }
@@ -168,19 +172,29 @@ const Block = styled("div")`
     font-size: 30px;
   }
 
-  @media (max-width: 540px) {
-    .MuiAccordionSummary-content {
-      font-size: 20px;
+  @media (max-width: 550px) {
+    h1 {
+      font-size: 35px;
     }
-  }
 
-  @media (max-width: 500px) {
     .MuiAccordionSummary-content {
-      font-size: 16px;
+      font-size: 15px;
+      font-weight: 800;
     }
 
     .MuiAccordionDetails-root {
-      font-size: 15px;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    .MuiAccordionSummary-content {
+      font-size: 13px;
+      font-weight: 700;
     }
   }
 `;

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
-import "../../Hell.css";
 
 const data = [
   {
@@ -22,7 +21,7 @@ const data = [
   },
 ];
 
-export const Main = ({ resultRef, tarifRef }) => {
+export const Target = ({ resultRef, tarifRef }) => {
   return (
     <Mains ref={resultRef}>
       <Container>
@@ -57,13 +56,7 @@ export const Main = ({ resultRef, tarifRef }) => {
           </div>
         </Block>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "5rem",
-          }}
-        >
+        <div className="btn">
           <button
             onClick={() =>
               tarifRef.current &&
@@ -103,6 +96,12 @@ const Container = styled("div")`
     font-weight: 600;
     font-size: 25px;
     width: 40rem;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
   }
 
   @media (max-width: 1145px) {
@@ -153,6 +152,7 @@ const Container = styled("div")`
 
   @media (max-width: 520px) {
     width: 25rem;
+    padding: 2rem;
 
     h1 {
       font-size: 30px;
@@ -161,6 +161,10 @@ const Container = styled("div")`
     h3 {
       width: 15rem;
       font-size: 15px;
+    }
+
+    .btn {
+      margin-top: 1rem;
     }
   }
 
@@ -186,9 +190,10 @@ const Title = styled("div")`
     margin: 0;
   }
 
-  @media (max-width: 460px) {
+  @media (max-width: 500px) {
+    gap: 1rem;
     p {
-      font-size: 15px;
+      font-size: 13px;
     }
   }
 `;
@@ -215,6 +220,8 @@ const Block = styled("div")`
   }
 
   @media (max-width: 520px) {
+    margin-top: 2rem;
+
     .slider {
       width: 20rem;
     }

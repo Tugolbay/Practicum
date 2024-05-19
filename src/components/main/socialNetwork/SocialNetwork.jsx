@@ -4,7 +4,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { PiTelegramLogoBold } from "react-icons/pi";
 import { FaYoutube } from "react-icons/fa";
 
-export const Main12 = () => {
+export const SocialNetwork = () => {
   return (
     <Container>
       <h2>Подписывайтесь на наши соцсети</h2>
@@ -115,7 +115,7 @@ const Telegram = styled("a")`
   cursor: pointer;
 `;
 
-const VContact = styled("div")`
+const VContact = styled("a")`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,7 +131,7 @@ const VContact = styled("div")`
   }
 `;
 
-const Square = styled("div")`
+const Square = styled("a")`
   display: flex;
   align-items: center;
   justify-content: center;
