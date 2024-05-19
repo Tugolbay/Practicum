@@ -1,28 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main7 = ({ bonusRef, tarifRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Container ref={bonusRef}>
-      <h2>
+      <h2 data-aos="fade-right">
         Все участники Практикума примут участие в прямом эфире с разбором ваших
         реальных карточек товаров от эксперта IT-платформы "Меркатус"
       </h2>
       <Block>
-        <h3>
+        <h3 data-aos="fade-right">
           КУПИТЕ БИЛЕТ НА ПРАКТИКУМ
           <span> В ТЕЧЕНИЕ 5 МИНУТ И ЗАБЕРИТЕ БОНУСЫ</span>
         </h3>
 
         <Row1>
           <Column>
-            <p>Чек-лист «Расчет суммы для старта бизнеса на маркетплейсах»</p>
-            <p>
+            <p data-aos="fade-right">
+              Чек-лист «Расчет суммы для старта бизнеса на маркетплейсах»
+            </p>
+            <p data-aos="fade-right">
               Гайд «10 фишек по продвижению товара, чтобы быть впереди
               конкурентов»
             </p>
             <div>
               <button
+                data-aos="fade-down"
                 onClick={() =>
                   tarifRef.current &&
                   tarifRef.current.scrollIntoView({ behavior: "smooth" })

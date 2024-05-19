@@ -4,33 +4,40 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main11 = () => {
+  React.useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Container>
       <Block>
-        <h1>ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
+        <h1 data-aos="fade-right">ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
             Будет ли запись Практикума?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             Да. Запись будет в вашем личнем кабинете на нашей платформе.
           </AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2-content"
             id="panel2-header"
           >
             Для выхода на маркетплейсы нужен большой стартовый бюджет?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             Стартовать на маркетплейсах можно с бюджетоми 50 000 руб. Главное
             научиться минимизировать риски, чтобы не потерять деньги на старте.
             На Практикуме за 2 дня вы пройдете путь селлера от выбора товара до
@@ -40,13 +47,14 @@ export const Main11 = () => {
         </Accordion>
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel3-content"
             id="panel3-header"
           >
             Я оплатил(а). Что дальше?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             В течение суток после оплаты на почту, которую вы указали при
             регистрации, придет письмо с информацией. Если вы не можете найти
             письмо в папке «Входящие», проверьте папки «Спам» или «Промо».
@@ -55,13 +63,14 @@ export const Main11 = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
             Чем ваше обучение лучше других?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             Лео Шевченко — действующий селлер с 15-летним опытом, который
             обучался всему сам. Поэтому обо всех изменениях на маркетплейсах он
             узнает в числе первых и дает только качественную информацию. А
@@ -73,13 +82,14 @@ export const Main11 = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
             Что взять с собой на Практикум?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             Обязательно возьми с собой заряженный ноутбук, потому что мы будем
             на практике разбирать работу с таблицами. И не забудь про хорошее
             настроение
@@ -88,13 +98,14 @@ export const Main11 = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
             Будут ли на Практикуме практические задания?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             Конечно! 1-й день практикума больше теоретический. Во 2-й день вас
             ждет командная бизнес-игра, в которой вы сможете проявить себя как
             настоящий селлер, проработать свои навыки и применить полученные
@@ -104,13 +115,14 @@ export const Main11 = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
             Если я не торгую на маркетплейсе, мне нужно идти на Практикум?
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails data-aos="fade-right">
             Практикум - это идеальное место, где вы можете начать свой путь
             селлера. А также Практикум однозначно стоит посетить, если вы -
             собственник производства, менеджер маркетплейсов, начинающий или

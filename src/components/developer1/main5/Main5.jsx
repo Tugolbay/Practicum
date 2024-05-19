@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main5 = ({ spicerRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Mains ref={spicerRef}>
       <Container>
-        <h1>ГЛАВНЫЙ СПИКЕР</h1>
-        <h1 style={{ color: "#9400fd" }}>И СОЗДАТЕЛЬ ПРАКТИКУМА</h1>
+        <h1 data-aos="fade-right">ГЛАВНЫЙ СПИКЕР</h1>
+        <h1 data-aos="fade-right" style={{ color: "#9400fd" }}>
+          И СОЗДАТЕЛЬ ПРАКТИКУМА
+        </h1>
 
         <Block>
           <div>
-            <Row1>
+            <Row1 data-aos="fade-right">
               <img
                 src="https://habrastorage.org/getpro/moikrug/uploads/company/100/004/679/1/logo/big_52d6473a9db6fc51ff16b12c9c83e8bb.jpg"
                 alt="img"
@@ -18,7 +25,7 @@ export const Main5 = ({ spicerRef }) => {
               <p>Продает на маркетплейсах с 2014 года</p>
             </Row1>
 
-            <Row1>
+            <Row1 data-aos="fade-right">
               <img
                 src="https://habrastorage.org/getpro/moikrug/uploads/company/100/004/679/1/logo/big_52d6473a9db6fc51ff16b12c9c83e8bb.jpg"
                 alt="img"
@@ -28,7 +35,7 @@ export const Main5 = ({ spicerRef }) => {
           </div>
 
           <div>
-            <Row2>
+            <Row2 data-aos="fade-right">
               <img
                 src="https://4play.by/upload/iblock/587/587e1187a83df643904d271fa9095e4b.png"
                 alt="img"
@@ -36,7 +43,7 @@ export const Main5 = ({ spicerRef }) => {
               <p>Официальный амбассадор Ozon и Яндекс Маркет</p>
             </Row2>
 
-            <Row2>
+            <Row2 data-aos="fade-right">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
                 alt="img"
@@ -51,14 +58,18 @@ export const Main5 = ({ spicerRef }) => {
 
         <Block2>
           <Row3>
-            <p className="number">10 000+</p>
-            <p className="text">
+            <p data-aos="fade-right" className="number">
+              10 000+
+            </p>
+            <p data-aos="fade-right" className="text">
               селлеров вывел на маркетплейсы, 97% из которых довольны обучением
             </p>
           </Row3>
           <Row3>
-            <p className="number">60+ МЛН РУБ</p>
-            <p className="text">
+            <p data-aos="fade-right" className="number">
+              60+ МЛН РУБ
+            </p>
+            <p data-aos="fade-right" className="text">
               оборот как действующего селлера на маркетплейсах
             </p>
           </Row3>

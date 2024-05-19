@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IoRocket } from "react-icons/io5";
 import { FaBriefcase } from "react-icons/fa";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { TbMoneybag } from "react-icons/tb";
 import { FaSearch } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main2 = ({ whoRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Container ref={whoRef}>
       <div>
         <div>
-          <h1>ПРАКТИКУМ – ЭТО</h1>
-          <h1>НОВЫЕ ВОЗМОЖНОСТИ ДЛЯ ТЕБЯ!</h1>
+          <h1 data-aos="fade-right">ПРАКТИКУМ – ЭТО</h1>
+          <h1 data-aos="fade-right">НОВЫЕ ВОЗМОЖНОСТИ ДЛЯ ТЕБЯ!</h1>
         </div>
 
         <ContainerBlock>
-          <Block1>
+          <Block1 data-aos="fade-right">
             <img
               src="https://optim.tildacdn.com/tild6265-6261-4433-a439-376562656238/-/resize/888x/-/format/webp/Group_1480_1.png"
               alt=""
@@ -24,14 +29,20 @@ export const Main2 = ({ whoRef }) => {
           </Block1>
 
           <Block>
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <IoRocket size={40} color="#a238ff" />
               <p>
                 <strong> Интересуешься выходом на маркетплейсы,</strong> но пока
                 сомневаешься и хочешь получить пошаговый алгоритм действий
               </p>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <FaBriefcase size={40} color="#a238ff" />
               <p>
                 <strong>Начинающий продавец на маркетплейсах</strong> и хочешь
@@ -39,7 +50,10 @@ export const Main2 = ({ whoRef }) => {
               </p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <IoNewspaperOutline size={40} color="#a238ff" />
               <p>
                 <strong> Опытный селлер</strong>, но планируешь масштабировать
@@ -47,7 +61,10 @@ export const Main2 = ({ whoRef }) => {
               </p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <TbMoneybag size={40} color="#a238ff" />
               <p>
                 <strong> Менеджер маркетплейсов</strong> и ищешь способы
@@ -55,7 +72,10 @@ export const Main2 = ({ whoRef }) => {
               </p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <FaSearch size={40} color="#a238ff" />
               <p>
                 <strong>Предприниматель</strong> в поисках дополнительных

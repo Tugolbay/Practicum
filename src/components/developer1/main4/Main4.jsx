@@ -1,29 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaBus } from "react-icons/fa";
 import { PiTramBold } from "react-icons/pi";
 import "leaflet/dist/leaflet.css";
 import { Map } from "./Map";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main4 = ({ placeRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Container ref={placeRef}>
-      <h1>МЕСТО ПРОВЕДЕНИЯ ПРАКТИКУМА</h1>
+      <h1 data-aos="fade-right">МЕСТО ПРОВЕДЕНИЯ ПРАКТИКУМА</h1>
 
       <div>
         <div>
-          <h3>ДВОРЕЦ КУЛЬТУРЫ</h3>
+          <h3 data-aos="fade-right">ДВОРЕЦ КУЛЬТУРЫ</h3>
           <Row1>
-            <Title>
+            <Title data-aos="fade-right">
               <FaLocationDot size={30} color="rgba(148, 41, 232, 1)" />
               <p>ул. Шарикоподшипниковская д15.стр 1, Москва</p>
             </Title>
-            <Title>
+            <Title data-aos="fade-right">
               <PiTramBold size={30} color="rgba(148, 41, 232, 1)" />
               <p>Дубровка 294 м (пешком)</p>
             </Title>
-            <Title>
+            <Title data-aos="fade-right">
               <FaBus size={30} color="rgba(148, 41, 232, 1)" />
               <p>МЦК Дубровка 172 м (пешком)</p>
             </Title>
@@ -31,11 +36,13 @@ export const Main4 = ({ placeRef }) => {
 
           <ImageRow>
             <Image
+              data-aos="fade-right"
               src="https://optim.tildacdn.com/tild3739-3666-4535-a336-333630623864/-/cover/506x310/center/center/-/format/webp/image.png"
               alt="img"
             />
 
             <Image
+              data-aos="fade-right"
               src="https://optim.tildacdn.com/tild6333-6462-4432-b432-656261626661/-/cover/506x298/center/center/-/format/webp/image.png"
               alt="img"
             />

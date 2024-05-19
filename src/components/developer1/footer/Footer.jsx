@@ -1,29 +1,39 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { PiTelegramLogoBold } from "react-icons/pi";
 import { BsTelephoneX } from "react-icons/bs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Footer = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Container>
       <BlockRow>
         <Row1>
           <img
+            data-aos="fade-right"
             src="https://static.tildacdn.com/tild6631-6138-4330-b939-346562303661/__1.svg"
             alt="img"
           />
 
-          <Desc>ООО "МЕРКАТУС" ИНН: 9723158300, ОГРН: 1227700373768.</Desc>
+          <Desc data-aos="fade-right">
+            ООО "МЕРКАТУС" ИНН: 9723158300, ОГРН: 1227700373768.
+          </Desc>
 
           <Link>
             <a
+              data-aos="fade-right"
               target="_blank"
               href="https://merkatys.ru/tech?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
             >
               Техническая инструкция
             </a>
             <a
+              data-aos="fade-right"
               target="_blank"
               href="https://merkatys.ru/doc?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
             >
@@ -33,17 +43,24 @@ export const Footer = () => {
         </Row1>
 
         <Row2>
-          <Telegram href="https://t.me/leoshevchenko_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
+          <Telegram
+            data-aos="fade-right"
+            href="https://t.me/leoshevchenko_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+          >
             <PiTelegramLogoBold size={30} color="white" />
             <p>Служба заботы</p>
           </Telegram>
 
-          <Telegram href="https://t.me/merkatus_partners_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-">
+          <Telegram
+            data-aos="fade-right"
+            href="https://t.me/merkatus_partners_bot?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
+          >
             <PiTelegramLogoBold size={30} color="white" />
             <p>Сотрудничество</p>
           </Telegram>
 
           <div
+            data-aos="fade-right"
             style={{
               display: "flex",
               alignItems: "center",
@@ -51,23 +68,23 @@ export const Footer = () => {
             }}
           >
             <BsTelephoneX size={25} color="white" />
-            <p style={{ color: "#fff" }}>8 800 700-13-52</p>
+            <p style={{ color: "#fffff" }}>8 800 700-13-52</p>
           </div>
         </Row2>
       </BlockRow>
 
       <Row3>
         <div>
-          <a target="_blank" href="/">
+          <a data-aos="fade-right" target="_blank" href="/">
             Лицензионный договор оферты
           </a>
-          <a target="_blank" href="/">
+          <a data-aos="fade-right" target="_blank" href="/">
             Договор оферты
           </a>
-          <a target="_blank" href="/">
+          <a data-aos="fade-right " target="_blank" href="/">
             Соглашение об участии в партнерской программе
           </a>
-          <a target="_blank" href="/">
+          <a data-aos="fade-right" target="_blank" href="/">
             Политика обработки персональных данных
           </a>
         </div>

@@ -1,55 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main3 = ({ tarifRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Mains>
       <Container>
-        <h1>
+        <h1 data-aos="fade-right">
           <strong>ПРОГРАММА</strong> ПРАКТИКУМА
         </h1>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <Border1>
             <div>
-              <h3>1 ДЕНЬ. ТЕОРЕТИЧЕСКИЙ</h3>
-              <Text>
+              <h3 data-aos="fade-right">1 ДЕНЬ. ТЕОРЕТИЧЕСКИЙ</h3>
+              <Text data-aos="fade-right">
                 Заложим фундаментальные знания по построению бизнеса на
                 маркетплейсах
               </Text>
             </div>
             <div>
               <Border1Childe>
-                <li>Разбор трендов рынка eCom</li>
-                <li>
+                <li data-aos="fade-right">Разбор трендов рынка eCom</li>
+                <li data-aos="fade-right">
                   Пошаговый план построения бизнеса на крупнейших маркетплейсах
                 </li>
-                <li>Выбор и закуп высокомаржинального товара</li>
-                <li>Оформление карточки и вывод её в ТОП</li>
-                <li>Анализ частых ошибок селлеров</li>
-                <li>Варианты масштабирования бизнеса на маркетплейсах</li>
+                <li data-aos="fade-right">
+                  Выбор и закуп высокомаржинального товара
+                </li>
+                <li data-aos="fade-right">
+                  Оформление карточки и вывод её в ТОП
+                </li>
+                <li data-aos="fade-right">Анализ частых ошибок селлеров</li>
+                <li data-aos="fade-right">
+                  Варианты масштабирования бизнеса на маркетплейсах
+                </li>
               </Border1Childe>
             </div>
           </Border1>
 
           <Border1>
             <div>
-              <h3>2 ДЕНЬ. ПРАКТИЧЕСКИЙ</h3>
-              <Text>
+              <h3 data-aos="fade-right">2 ДЕНЬ. ПРАКТИЧЕСКИЙ</h3>
+              <Text data-aos="fade-right">
                 Отработаем полученные знания на реальном бизнес-процессе и
                 углубимся в практику
               </Text>
             </div>
             <div>
               <Border1Childe>
-                <li>Бизнес-игра по выводу товара на маркетплейсы</li>
-                <li>
+                <li data-aos="fade-right">
+                  Бизнес-игра по выводу товара на маркетплейсы
+                </li>
+                <li data-aos="fade-right">
                   Разбор авторских табличек для построения системного бизнеса
                 </li>
-                <li>Выступления спикеров, специализирующихся в узких темах</li>
-                <li>Нейросети как эффективный инструмент селлера</li>
-                <li>Разбор ваших карточек товаров</li>
-                <li>Нетворкинг и командная работа</li>
+                <li data-aos="fade-right">
+                  Выступления спикеров, специализирующихся в узких темах
+                </li>
+                <li data-aos="fade-right">
+                  Нейросети как эффективный инструмент селлера
+                </li>
+                <li data-aos="fade-right">Разбор ваших карточек товаров</li>
+                <li data-aos="fade-right">Нетворкинг и командная работа</li>
               </Border1Childe>
             </div>
           </Border1>
@@ -63,6 +80,7 @@ export const Main3 = ({ tarifRef }) => {
           }}
         >
           <button
+            data-aos="fade-down"
             onClick={() =>
               tarifRef.current &&
               tarifRef.current.scrollIntoView({ behavior: "smooth" })

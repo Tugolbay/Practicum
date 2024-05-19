@@ -1,71 +1,94 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Modal } from "../Modal/Modal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main6 = ({ tarif }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const [open, setOpen] = useState(false);
   return (
     <Container ref={tarif}>
-      <h1>Выберите формат участия</h1>
+      <h1 data-aos="fade-right">Выберите формат участия</h1>
 
       <Block>
         <Row1>
-          <h3>ОНЛАЙН</h3>
+          <h3 data-aos="fade-down">ОНЛАЙН</h3>
           <ul>
-            <li>Онлайн посещение мероприятия</li>
-            <li>Запись мероприятия на 14 дней</li>
-            <li>Участие в эфире с разбором карточек от экспертов «Меркатус»</li>
-            <li>Онлайн-сертификат участника</li>
-            <li>Участие в розыгрыше призов</li>
+            <li data-aos="fade-right">Онлайн посещение мероприятия</li>
+            <li data-aos="fade-right">Запись мероприятия на 14 дней</li>
+            <li data-aos="fade-right">
+              Участие в эфире с разбором карточек от экспертов «Меркатус»
+            </li>
+            <li data-aos="fade-right">Онлайн-сертификат участника</li>
+            <li data-aos="fade-right">Участие в розыгрыше призов</li>
           </ul>
 
           <div>
-            <p>Стоимость</p>
-            <p>1 490 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="button">
+            <p data-aos="fade-right">Стоимость</p>
+            <p data-aos="fade-right">1 490 РУБ.</p>
+            <button
+              data-aos="fade-up"
+              onClick={() => setOpen(true)}
+              className="button"
+            >
               УЧАСТВОВАТЬ
             </button>
           </div>
         </Row1>
 
         <Row1>
-          <h3>ОФЛАЙН</h3>
+          <h3 data-aos="fade-down">ОФЛАЙН</h3>
           <ul>
-            <li>Личное присутствие на мероприятии</li>
-            <li>Запись мероприятия на 14 дней</li>
-            <li>Участие в эфире с разбором карточек от экспертов «Меркатус»</li>
-            <li>Онлайн-сертификат участника</li>
-            <li>Участие в розыгрыше призов</li>
+            <li data-aos="fade-right">Личное присутствие на мероприятии</li>
+            <li data-aos="fade-right">Запись мероприятия на 14 дней</li>
+            <li data-aos="fade-right">
+              Участие в эфире с разбором карточек от экспертов «Меркатус»
+            </li>
+            <li data-aos="fade-right">Онлайн-сертификат участника</li>
+            <li data-aos="fade-right">Участие в розыгрыше призов</li>
           </ul>
 
           <div>
-            <p>Стоимость</p>
-            <p>2 590 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="button">
+            <p data-aos="fade-right">Стоимость</p>
+            <p data-aos="fade-right">2 590 РУБ.</p>
+            <button
+              data-aos="fade-up"
+              onClick={() => setOpen(true)}
+              className="button"
+            >
               УЧАСТВОВАТЬ
             </button>
           </div>
         </Row1>
 
         <Row1>
-          <h3>VIP</h3>
+          <h3 data-aos="fade-down">VIP</h3>
           <ul>
-            <li>Онлайн посещение мероприятия</li>
-            <li>Запись мероприятия на 30 дней</li>
-            <li>Участие в эфире с разбором карточек от экспертов «Меркатус»</li>
-            <li>Печатный сертификат участника</li>
-            <li>Часовая сессия «Вопрос-ответ» с Лео</li>
-            <li>Завтрак на мероприятии</li>
-            <li>VIP-зона в перерыве</li>
-            <li>Отдельный гардероб</li>
-            <li>Фирменный мерч в подарок</li>
-            <li>Участие в розыгрыше призов</li>
+            <li data-aos="fade-right">Онлайн посещение мероприятия</li>
+            <li data-aos="fade-right">Запись мероприятия на 30 дней</li>
+            <li data-aos="fade-right">
+              Участие в эфире с разбором карточек от экспертов «Меркатус»
+            </li>
+            <li data-aos="fade-right">Печатный сертификат участника</li>
+            <li data-aos="fade-right">Часовая сессия «Вопрос-ответ» с Лео</li>
+            <li data-aos="fade-right">Завтрак на мероприятии</li>
+            <li data-aos="fade-right">VIP-зона в перерыве</li>
+            <li data-aos="fade-right">Отдельный гардероб</li>
+            <li data-aos="fade-right">Фирменный мерч в подарок</li>
+            <li data-aos="fade-right">Участие в розыгрыше призов</li>
           </ul>
 
           <div>
-            <p>Стоимость</p>
-            <p>15 000 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="button">
+            <p data-aos="fade-right">Стоимость</p>
+            <p data-aos="fade-right">15 000 РУБ.</p>
+            <button
+              data-aos="fade-up"
+              onClick={() => setOpen(true)}
+              className="button"
+            >
               УЧАСТВОВАТЬ
             </button>
           </div>
@@ -134,7 +157,7 @@ const Block = styled("div")`
 const Row1 = styled("div")`
   width: 25vw;
   background-color: #3d3c3c;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 20px;
 
   h3 {

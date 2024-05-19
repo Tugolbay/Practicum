@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { IoSchoolSharp } from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
 import "../../Hell.css";
 import { GiHamburgerMenu } from "react-icons/gi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Header = ({
   whoRef,
@@ -13,6 +15,10 @@ export const Header = ({
   bonusRef,
   spicerRef,
 }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [showInfocart, setShowInfocart] = useState(false);
 
   return (
@@ -76,27 +82,27 @@ export const Header = ({
       </Block>
 
       <Block1>
-        <div className="bgc-container">
+        <div data-aos="fade-right" className="bgc-container">
           <IoSchoolSharp size={30} color="black" />
           <p>18 - 19 МАЯ В 11:00 ПО МСК</p>
         </div>
 
-        <div className="bgc-container2">
+        <div data-aos="fade-left" className="bgc-container2">
           <MdDateRange size={30} color="black" />
           <p>ОФЛАЙН / ОНЛАЙН</p>
         </div>
       </Block1>
 
       <Block2>
-        <h1>ПРАКТИКУМ</h1>
+        <h1 data-aos="fade-right">ПРАКТИКУМ</h1>
         <div>
-          <h3>ПО ПОСТРОЕНИЮ И МАСШТАБИРОВАНИЮ</h3>
-          <h3>БИЗНЕСА НА МАРКЕТПЛЕЙСАХ</h3>
+          <h3 data-aos="fade-right">ПО ПОСТРОЕНИЮ И МАСШТАБИРОВАНИЮ</h3>
+          <h3 data-aos="fade-right">БИЗНЕСА НА МАРКЕТПЛЕЙСАХ</h3>
         </div>
       </Block2>
 
       <Block3>
-        <div>
+        <div data-aos="fade-right">
           <button
             onClick={() =>
               tarifRef.current &&
@@ -108,14 +114,14 @@ export const Header = ({
           </button>
         </div>
 
-        <Count>
+        <Count data-aos="fade-left">
           <p>Осталось</p>
           <p>110</p>
           <p>мест оффлайн</p>
         </Count>
       </Block3>
 
-      <Block4Container>
+      <Block4Container data-aos="fade-down">
         <Block4>
           <div
             onMouseEnter={() => setShowInfocart(true)}
