@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Modal2 } from "../Modal/Modal2";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Partner = () => {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container>
       <Block>
-        <h2>ХОТИТЕ СТАТЬ ПАРТНЁРОМ МЕРКАТУС?</h2>
-        <p>Оставьте заявку, с вами свяжется наша команда и все расскажет</p>
+        <h2 data-aos="fade-right">ХОТИТЕ СТАТЬ ПАРТНЁРОМ МЕРКАТУС?</h2>
+        <p data-aos="fade-right">
+          Оставьте заявку, с вами свяжется наша команда и все расскажет
+        </p>
 
         <div>
-          <Button onClick={() => setOpen(true)}>ХОЧУ СТАТЬ ПАРТНЕРОМ</Button>
+          <Button data-aos="fade-right" onClick={() => setOpen(true)}>
+            ХОЧУ СТАТЬ ПАРТНЕРОМ
+          </Button>
         </div>
       </Block>
 

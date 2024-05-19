@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Rate = () => {
   const [inp, setInp] = useState("");
   const [inp2, setInp2] = useState("");
   const [inp3, setInp3] = useState("");
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,8 +36,8 @@ export const Rate = () => {
   return (
     <Container onSubmit={handleSubmit}>
       <Block>
-        <h2>НЕ МОЖЕТЕ ВЫБРАТЬ ТАРИФ?</h2>
-        <p>
+        <h2 data-aos="fade-right">НЕ МОЖЕТЕ ВЫБРАТЬ ТАРИФ?</h2>
+        <p data-aos="fade-right">
           Оставьте заявку и получите подробную презентацию программы с
           консультацией специалиста
         </p>
@@ -40,6 +45,7 @@ export const Rate = () => {
 
       <Block2>
         <input
+          data-aos="fade-right"
           value={inp2}
           onChange={(e) => setInp2(e.target.value)}
           name="name"
@@ -48,6 +54,7 @@ export const Rate = () => {
           placeholder="Ваше имя"
         />
         <input
+          data-aos="fade-right"
           value={inp3}
           onChange={(e) => setInp3(e.target.value)}
           name="number"
@@ -56,6 +63,7 @@ export const Rate = () => {
           placeholder="+7 (999) 999-99-99"
         />
         <input
+          data-aos="fade-right"
           value={inp}
           onChange={(e) => setInp(e.target.value)}
           name="email"
@@ -64,7 +72,7 @@ export const Rate = () => {
           placeholder="email"
         />
 
-        <Checkbox>
+        <Checkbox data-aos="fade-right">
           <input type="checkbox" />
           <p>
             Даю согласие на <a href="/">обработку персональных данных</a>
@@ -72,10 +80,12 @@ export const Rate = () => {
         </Checkbox>
 
         <div>
-          <Button type="submit">ЗАБРОНИРОВАТЬ МЕСТО</Button>
+          <Button type="submit" data-aos="fade-up">
+            ЗАБРОНИРОВАТЬ МЕСТО
+          </Button>
         </div>
 
-        <Desc>Нажимая на кнопку, вы соглашаетесь с договором офферты</Desc>
+        <Desc data-aos="fade-right">Нажимая на кнопку, вы соглашаетесь с договором офферты</Desc>
       </Block2>
     </Container>
   );
