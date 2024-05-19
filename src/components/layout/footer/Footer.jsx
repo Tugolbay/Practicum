@@ -68,7 +68,7 @@ export const Footer = () => {
             }}
           >
             <BsTelephoneX size={25} color="white" />
-            <p style={{ color: "#fffff" }}>8 800 700-13-52</p>
+            <p style={{ color: "white" }}>8 800 700-13-52</p>
           </div>
         </Row2>
       </BlockRow>
