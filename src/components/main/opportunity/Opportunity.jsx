@@ -29,15 +29,21 @@ export const Opportunity = ({ whoRef }) => {
             />
           </Block1>
 
-          <Block data-aos="fade-left">
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+          <Block>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <IoRocket size={40} color="#a238ff" />
               <p>
                 <strong> Интересуешься выходом на маркетплейсы,</strong> но пока
                 сомневаешься и хочешь получить пошаговый алгоритм действий
               </p>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <FaBriefcase size={40} color="#a238ff" />
               <p>
                 <strong>Начинающий продавец на маркетплейсах</strong> и хочешь
@@ -45,7 +51,10 @@ export const Opportunity = ({ whoRef }) => {
               </p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <IoNewspaperOutline size={40} color="#a238ff" />
               <p>
                 <strong> Опытный селлер</strong>, но планируешь масштабировать
@@ -53,7 +62,10 @@ export const Opportunity = ({ whoRef }) => {
               </p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <TbMoneybag size={40} color="#a238ff" />
               <p>
                 <strong> Менеджер маркетплейсов</strong> и ищешь способы
@@ -61,7 +73,10 @@ export const Opportunity = ({ whoRef }) => {
               </p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div
+              data-aos="fade-right"
+              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            >
               <FaSearch size={40} color="#a238ff" />
               <p>
                 <strong>Предприниматель</strong> в поисках дополнительных
