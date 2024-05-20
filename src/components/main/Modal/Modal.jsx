@@ -162,7 +162,7 @@ const Block = styled("div")`
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   padding: 1.5rem;
-  background: #1578ba;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -217,7 +217,7 @@ const Row = styled("div")`
   align-items: center;
 
   a {
-    color: black;
+    color: #086ba1;
   }
 
   .checkBlock {
