@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { IoSchoolSharp } from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { GiHamburgerMenu } from "react-icons/gi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Header = ({
   whoRef,
@@ -24,6 +26,10 @@ export const Header = ({
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <Container>
@@ -94,18 +100,18 @@ export const Header = ({
       <HeaderMain>
         <HeaderMainRow>
           <Block1>
-            <div className="bgc-container">
+            <div data-aos="fade-right" className="bgc-container">
               <IoSchoolSharp size={30} color="black" />
               <p>18 - 19 МАЯ В 11:00 ПО МСК</p>
             </div>
 
-            <div className="bgc-container2">
+            <div data-aos="fade-right" className="bgc-container2">
               <MdDateRange size={30} color="black" />
               <p>ОФЛАЙН / ОНЛАЙН</p>
             </div>
           </Block1>
 
-          <Block2>
+          <Block2 data-aos="fade-right">
             <h1>ПРАКТИКУМ</h1>
             <div>
               <h3>ПО ПОСТРОЕНИЮ И МАСШТАБИРОВАНИЮ</h3>
@@ -113,7 +119,7 @@ export const Header = ({
             </div>
           </Block2>
 
-          <Block3>
+          <Block3 data-aos="fade-right">
             <div>
               <button
                 onClick={() =>
@@ -126,14 +132,14 @@ export const Header = ({
               </button>
             </div>
 
-            <Count>
+            <Count data-aos="fade-right">
               <p>Осталось</p>
               <p>110</p>
               <p>мест оффлайн</p>
             </Count>
           </Block3>
         </HeaderMainRow>
-        <ImageRow>
+        <ImageRow data-aos="fade-left">
           <img
             src="https://optim.tildacdn.com/tild3336-6237-4566-b132-373733616533/-/format/webp/IMG_3780_1_1.png"
             alt="img"

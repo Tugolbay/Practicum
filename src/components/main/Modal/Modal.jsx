@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable default-case */
 import React, { useState } from "react";
 import styled from "styled-components";
 import TextField from "@mui/material/TextField";
@@ -8,15 +10,75 @@ export const Modal = ({ setOpen }) => {
   const [inp2, setInp2] = useState("");
   const [inp3, setInp3] = useState("");
 
+  const [emailDirty, setEmailDirty] = useState(false);
+  const [nameDirty, setNameDirty] = useState(false);
+  const [numberlDirty, setNumberDirty] = useState(false);
+
+  const [emailError, setEmailError] = useState(
+    "Пожалуйста напишите свой адрес электронной почты"
+  );
+  const [nameError, setNameError] = useState("Пожалуйста напишите свое имя");
+  const [numberlError, setNumberError] = useState(
+    "Пожалуйста напишите свой номер телефона"
+  );
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+  };
+
+  const emailHandler = (e) => {
+    setInp(e.target.value);
+    const re =
+      /^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setEmailError("Некорректный email");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const nameHandler = (e) => {
+    setInp2(e.target.value);
+    const nameRegex = /^[A-Za-zА-Яа-яЁё\s]+$/;
+
+    if (!nameRegex.test(String(e.target.value).toLowerCase())) {
+      setNameError("Некорректное имя");
+    } else {
+      setNameError("");
+    }
+  };
+
+  const numberHandler = (e) => {
+    setInp3(e.target.value);
+
+    if (e.target.value) {
+      setNumberError("");
+    }
+  };
+
+  const onBlure = (e) => {
+    switch (e.target.name) {
+      case "email":
+        setEmailDirty(true);
+        break;
+      case "name":
+        setNameDirty(true);
+        break;
+      case "number":
+        setNumberDirty(true);
+        break;
+    }
   };
   return (
     <Container onSubmit={handleSubmit}>
       <Block>
         <div
           onClick={() => setOpen(false)}
-          style={{ display: "flex", justifyContent: "flex-end" }}
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
         >
           <IoCloseSharp color="white" size={35} cursor="pointer" />
         </div>
@@ -26,33 +88,42 @@ export const Modal = ({ setOpen }) => {
 
           <InputBlock>
             <TextField
+              onBlur={(e) => onBlure(e)}
               value={inp}
-              onChange={(e) => setInp(e.target.value)}
+              onChange={emailHandler}
               name="email"
               id="standard-basic"
               label="Введите ваш эл.адрес"
               variant="standard"
-              required
             />
+            {emailDirty && emailError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{emailError}</p>
+            )}
             <TextField
               value={inp2}
               name="name"
-              onChange={(e) => setInp2(e.target.value)}
+              onBlur={(e) => onBlure(e)}
+              onChange={nameHandler}
               id="standard-basic"
               label="Введите ваше имя"
               variant="standard"
-              required
             />
+            {nameDirty && nameError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{nameError}</p>
+            )}
             <TextField
               name="number"
               value={inp3}
-              onChange={(e) => setInp3(e.target.value)}
+              onBlur={(e) => onBlure(e)}
+              onChange={numberHandler}
               id="standard-basic"
               label="Введите ваш телефон"
               variant="standard"
               className="inputs"
-              required
             />
+            {numberlDirty && numberlError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{numberlError}</p>
+            )}
           </InputBlock>
 
           <button type="submit" className="btn">
@@ -133,6 +204,10 @@ const Block = styled("div")`
 
   @media (max-width: 495px) {
     width: 20rem;
+
+    h3 {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -181,7 +256,7 @@ const InputBlock = styled("div")`
   display: flex;
   flex-direction: column;
   width: 45%;
-  gap: 2.5rem;
+  gap: 1rem;
   margin-top: 2rem;
 
   .MuiInputBase-root-MuiInput-root {
@@ -193,6 +268,18 @@ const InputBlock = styled("div")`
   }
   .MuiInputLabel-root {
     color: white;
+  }
+
+  .MuiInput-root::before {
+    border-bottom: 2px solid white !important;
+  }
+
+  .MuiInput-root::after {
+    border-bottom: 2px solid white !important;
+  }
+
+  @media (max-width: 740px) {
+    margin-top: 0.5rem;
   }
 
   @media (max-width: 690px) {

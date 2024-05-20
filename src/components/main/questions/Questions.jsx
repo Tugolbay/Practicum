@@ -4,14 +4,21 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Questions = () => {
+  React.useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container>
       <Block>
-        <h1>ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
+        <h1 data-aos="fade-right">ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
@@ -24,6 +31,7 @@ export const Questions = () => {
         </Accordion>
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2-content"
             id="panel2-header"
@@ -40,6 +48,7 @@ export const Questions = () => {
         </Accordion>
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel3-content"
             id="panel3-header"
@@ -55,6 +64,7 @@ export const Questions = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
@@ -73,6 +83,7 @@ export const Questions = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
@@ -88,6 +99,7 @@ export const Questions = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
@@ -104,6 +116,7 @@ export const Questions = () => {
 
         <Accordion>
           <AccordionSummary
+            data-aos="fade-right"
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
