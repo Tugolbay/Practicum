@@ -1,29 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IoRocket } from "react-icons/io5";
 import { FaBriefcase } from "react-icons/fa";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { TbMoneybag } from "react-icons/tb";
 import { FaSearch } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Opportunity = ({ whoRef }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container ref={whoRef}>
       <div>
-        <div>
+        <div data-aos="fade-right">
           <h1>ПРАКТИКУМ – ЭТО</h1>
           <h1>НОВЫЕ ВОЗМОЖНОСТИ ДЛЯ ТЕБЯ!</h1>
         </div>
 
         <ContainerBlock>
-          <Block1>
+          <Block1 data-aos="fade-right">
             <img
               src="https://optim.tildacdn.com/tild6265-6261-4433-a439-376562656238/-/resize/888x/-/format/webp/Group_1480_1.png"
               alt=""
             />
           </Block1>
 
-          <Block>
+          <Block data-aos="fade-left">
             <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
               <IoRocket size={40} color="#a238ff" />
               <p>

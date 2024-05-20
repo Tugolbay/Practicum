@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable default-case */
 import React, { useState } from "react";
 import styled from "styled-components";
 import { IoCloseSharp } from "react-icons/io5";
@@ -7,8 +9,65 @@ export const Modal2 = ({ setOpen }) => {
   const [inp2, setInp2] = useState("");
   const [inp3, setInp3] = useState("");
 
+  const [emailDirty, setEmailDirty] = useState(false);
+  const [nameDirty, setNameDirty] = useState(false);
+  const [numberlDirty, setNumberDirty] = useState(false);
+
+  const [emailError, setEmailError] = useState(
+    "Пожалуйста напишите свой адрес электронной почты"
+  );
+  const [nameError, setNameError] = useState("Пожалуйста напишите свое имя");
+  const [numberlError, setNumberError] = useState(
+    "Пожалуйста напишите свой номер телефона"
+  );
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+  };
+
+  const emailHandler = (e) => {
+    setInp(e.target.value);
+    const re =
+      /^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setEmailError("Некорректный email");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const nameHandler = (e) => {
+    setInp2(e.target.value);
+    const nameRegex = /^[A-Za-zА-Яа-яЁё\s]+$/;
+
+    if (!nameRegex.test(String(e.target.value).toLowerCase())) {
+      setNameError("Некорректное имя");
+    } else {
+      setNameError("");
+    }
+  };
+
+  const numberHandler = (e) => {
+    setInp3(e.target.value);
+
+    if (e.target.value) {
+      setNumberError("");
+    }
+  };
+
+  const onBlure = (e) => {
+    switch (e.target.name) {
+      case "email":
+        setEmailDirty(true);
+        break;
+      case "name":
+        setNameDirty(true);
+        break;
+      case "number":
+        setNumberDirty(true);
+        break;
+    }
   };
   return (
     <Container onSubmit={handleSubmit}>
@@ -26,29 +85,39 @@ export const Modal2 = ({ setOpen }) => {
           </p>
           <InputBlock>
             <input
-              required
+              onBlur={(e) => onBlure(e)}
               value={inp2}
-              onChange={(e) => setInp2(e.target.value)}
+              onChange={nameHandler}
               name="name"
               type="text"
               placeholder="Ваше имя"
             />
+            {nameDirty && nameError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{nameError}</p>
+            )}
             <input
-              required
+              onBlur={(e) => onBlure(e)}
               value={inp}
-              onChange={(e) => setInp(e.target.value)}
+              onChange={emailHandler}
               name="email"
               type="email"
               placeholder="email"
             />
+            {emailDirty && emailError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{emailError}</p>
+            )}
             <input
-              required
+              onBlur={(e) => onBlure(e)}
               value={inp3}
-              onChange={(e) => setInp3(e.target.value)}
+              onChange={numberHandler}
               name="number"
               type="number"
               placeholder="Ваш телефон номер"
             />
+
+            {numberlDirty && numberlError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{numberlError}</p>
+            )}
             <button type="submit" className="btn">
               Записаться
             </button>
@@ -79,7 +148,7 @@ const Block = styled("div")`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 60%;
+  width: 45%;
   transform: translate(-50%, -50%);
 
   h3 {
@@ -141,7 +210,7 @@ const Row = styled("div")`
 const InputBlock = styled("div")`
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1rem;
   margin-top: 2rem;
 
   input {

@@ -47,7 +47,7 @@ export const MainSpeaker = () => {
                 <p>Официальный амбассадор Ozon и Яндекс Маркет</p>
               </Row1>
 
-              <Row1>
+              <Row2>
                 <img
                   src="https://i.pinimg.com/736x/2c/f2/ff/2cf2ff798b13ef93b5caababc4a401c7.jpg"
                   alt="img"
@@ -56,14 +56,13 @@ export const MainSpeaker = () => {
                   Автор самого просматриваемого YouTube-канала по маркетплейсам
                   (350+ тысяч подписчиков)
                 </p>
-              </Row1>
+              </Row2>
             </div>
 
             <Row3>
-              <p className="number">10 000+</p>
+              <p className="number">60+ млн</p>
               <p className="text">
-                селлеров вывел на маркетплейсы, 97% из которых довольны
-                обучением
+                оборот как действующего селлера на маркетплейсах
               </p>
             </Row3>
           </div>
@@ -191,6 +190,46 @@ const Row1 = styled("div")`
   }
 `;
 
+const Row2 = styled("div")`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+
+  img {
+    width: 3rem;
+    border-radius: 5px;
+  }
+
+  p {
+    width: 20vw;
+    font-size: 20px;
+  }
+
+  @media (max-width: 980px) {
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 690px) {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 490px) {
+    margin-top: 2rem;
+  }
+`;
+
 const Row3 = styled("div")`
   .number {
     font-size: 50px;
@@ -202,6 +241,7 @@ const Row3 = styled("div")`
   .text {
     font-size: 20px;
     font-weight: 300;
+    width: 30vw;
   }
 
   @media (max-width: 980px) {
