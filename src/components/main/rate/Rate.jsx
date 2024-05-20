@@ -5,34 +5,99 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export const Rate = () => {
-  const [inp, setInp] = useState("");
-  const [inp2, setInp2] = useState("");
-  const [inp3, setInp3] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    name: "",
+    number: "",
+  });
+
+  const [emailDirty, setEmailDirty] = useState(false);
+  const [nameDirty, setNameDirty] = useState(false);
+  const [numberDirty, setNumberDirty] = useState(false);
+
+  const [emailError, setEmailError] = useState(
+    "Пожалуйста напишите свой адрес электронной почты"
+  );
+  const [nameError, setNameError] = useState("Пожалуйста напишите свое имя");
+  const [numberError, setNumberError] = useState(
+    "Пожалуйста напишите свой номер телефона"
+  );
+
   useEffect(() => {
     AOS.init();
   }, []);
 
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setData({
+      ...data,
+      [name]: type === "checkbox" ? checked : value, // Update state based on input type
+    });
+
+    switch (name) {
+      case "email":
+        setEmailDirty(true);
+        const emailRe =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!emailRe.test(String(value).toLowerCase())) {
+          setEmailError("Некорректный email");
+        } else {
+          setEmailError("");
+        }
+        break;
+      case "name":
+        setNameDirty(true);
+        const nameRe = /^[A-Za-zА-Яа-яЁё\s]+$/;
+        if (!nameRe.test(String(value).toLowerCase())) {
+          setNameError("Некорректное имя");
+        } else {
+          setNameError("");
+        }
+        break;
+      case "number":
+        setNumberDirty(true);
+        const numberRe = /^\+?[0-9]+$/;
+        if (!numberRe.test(value)) {
+          setNumberError("Некорректный номер телефона");
+        } else {
+          setNumberError("");
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (emailError || nameError || numberError) {
+      alert("Пожалуйста, заполните все поля корректно.");
+      return;
+    }
 
-    emailjs
-      .sendForm(
-        "service_56tgup8",
-        "template_9hvaval",
-        e.target,
-        "-max2LpLG2rH-A3o7"
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-
-    alert("Ваша заяка отправлена");
-
-    setInp("");
-    setInp2("");
-    setInp3("");
+    try {
+      const res = await fetch(
+        "https://sheet.best/api/sheets/df778cf7-ef4d-4820-ac35-314d34d3e74b",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...data }),
+        }
+      );
+      if (res.ok) {
+        console.log("Data submitted successfully!");
+        setData({
+          name: "",
+          number: "",
+          email: "",
+          consent: false, // Reset consentауцацу state fewfwef after successful submission
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <Container onSubmit={handleSubmit}>
       <Block>
@@ -46,37 +111,52 @@ export const Rate = () => {
       <Block2>
         <input
           data-aos="fade-right"
-          value={inp2}
-          onChange={(e) => setInp2(e.target.value)}
+          value={data.name}
+          onChange={handleChange}
           name="name"
           className="input"
           type="text"
           placeholder="Ваше имя"
           required
         />
+        {nameDirty && nameError && (
+          <p style={{ color: "red", fontSize: "12px" }}>{nameError}</p>
+        )}
         <input
           data-aos="fade-right"
-          value={inp3}
-          onChange={(e) => setInp3(e.target.value)}
+          value={data.number}
+          onChange={handleChange}
           name="number"
           className="input"
-          type="number"
+          type="text"
           placeholder="+7 (999) 999-99-99"
           required
         />
+        {numberDirty && numberError && (
+          <p style={{ color: "red", fontSize: "12px" }}>{numberError}</p>
+        )}
         <input
           data-aos="fade-right"
-          value={inp}
-          onChange={(e) => setInp(e.target.value)}
+          value={data.email}
+          onChange={handleChange}
           name="email"
           className="input"
           type="email"
           placeholder="email"
           required
         />
+        {emailDirty && emailError && (
+          <p style={{ color: "red", fontSize: "12px" }}>{emailError}</p>
+        )}
 
         <Checkbox data-aos="fade-right">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={data.consent}
+            onChange={handleChange}
+            name="consent"
+            required
+          />
           <p>
             Даю согласие на <a href="/">обработку персональных данных</a>
           </p>

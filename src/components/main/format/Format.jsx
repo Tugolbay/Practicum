@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Modal } from "../Modal/Modal";
+import { Modal2 } from "../Modal/Modal2";
+import { Modal3 } from "../Modal/Modal3";
 
 export const Format = ({ tarif }) => {
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+
   return (
     <Container ref={tarif}>
       <h1>Выберите формат участия</h1>
@@ -18,7 +23,6 @@ export const Format = ({ tarif }) => {
             <li>Онлайн-сертификат участника</li>
             <li>Участие в розыгрыше призов</li>
           </ul>
-
           <div>
             <p>Стоимость</p>
             <p>1 490 РУБ.</p>
@@ -46,7 +50,7 @@ export const Format = ({ tarif }) => {
           <div>
             <p>Стоимость</p>
             <p>15 000 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="button">
+            <button onClick={() => setOpen2(true)} className="button">
               УЧАСТВОВАТЬ
             </button>
           </div>
@@ -65,7 +69,7 @@ export const Format = ({ tarif }) => {
           <div>
             <p>Стоимость</p>
             <p>2 590 РУБ.</p>
-            <button onClick={() => setOpen(true)} className="button">
+            <button onClick={() => setOpen3(true)} className="button">
               УЧАСТВОВАТЬ
             </button>
           </div>
@@ -73,6 +77,8 @@ export const Format = ({ tarif }) => {
       </Block>
 
       {open && <Modal setOpen={setOpen} />}
+      {open2 && <Modal2 setOpen2={setOpen2} />}
+      {open3 && <Modal3 setOpen3={setOpen3} />}
     </Container>
   );
 };
