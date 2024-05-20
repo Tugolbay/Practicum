@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const MainSpeaker = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Mains>
       <Container>
-        <h1>ГЛАВНЫЙ СПИКЕР</h1>
-        <h1 style={{ color: "#9400fd" }}>И СОЗДАТЕЛЬ ПРАКТИКУМА</h1>
+        <h1 data-aos="fade-right">ГЛАВНЫЙ СПИКЕР</h1>
+        <h1 data-aos="fade-right" style={{ color: "#9400fd" }}>
+          И СОЗДАТЕЛЬ ПРАКТИКУМА
+        </h1>
 
         <Column>
           <div>
             <div className="column">
-              <Row1>
+              <Row1 data-aos="fade-right">
                 <img
                   src="https://habrastorage.org/getpro/moikrug/uploads/company/100/004/679/1/logo/big_52d6473a9db6fc51ff16b12c9c83e8bb.jpg"
                   alt="img"
@@ -19,7 +27,7 @@ export const MainSpeaker = () => {
                 <p>Продает на маркетплейсах с 2014 года</p>
               </Row1>
 
-              <Row1>
+              <Row1 data-aos="fade-right">
                 <img
                   src="https://habrastorage.org/getpro/moikrug/uploads/company/100/004/679/1/logo/big_52d6473a9db6fc51ff16b12c9c83e8bb.jpg"
                   alt="img"
@@ -28,7 +36,7 @@ export const MainSpeaker = () => {
               </Row1>
             </div>
 
-            <Row3>
+            <Row3 data-aos="fade-right">
               <p className="number">10 000+</p>
               <p className="text">
                 селлеров вывел на маркетплейсы, 97% из которых довольны
@@ -39,7 +47,7 @@ export const MainSpeaker = () => {
 
           <div>
             <div className="column">
-              <Row1>
+              <Row1 data-aos="fade-right">
                 <img
                   src="https://4play.by/upload/iblock/587/587e1187a83df643904d271fa9095e4b.png"
                   alt="img"
@@ -47,7 +55,7 @@ export const MainSpeaker = () => {
                 <p>Официальный амбассадор Ozon и Яндекс Маркет</p>
               </Row1>
 
-              <Row2>
+              <Row2 data-aos="fade-right">
                 <img
                   src="https://i.pinimg.com/736x/2c/f2/ff/2cf2ff798b13ef93b5caababc4a401c7.jpg"
                   alt="img"
@@ -59,7 +67,7 @@ export const MainSpeaker = () => {
               </Row2>
             </div>
 
-            <Row3>
+            <Row3 data-aos="fade-right">
               <p className="number">60+ млн</p>
               <p className="text">
                 оборот как действующего селлера на маркетплейсах
@@ -68,7 +76,7 @@ export const MainSpeaker = () => {
           </div>
         </Column>
 
-        <div className="image">
+        <div className="image" data-aos="fade-right">
           <img
             src="https://optim.tildacdn.com/tild3434-3761-4562-b639-646438333331/-/format/webp/23231.png"
             alt="img"

@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IoLogoInstagram } from "react-icons/io5";
 import { PiTelegramLogoBold } from "react-icons/pi";
 import { FaYoutube } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const SocialNetwork = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container>
-      <h2>Подписывайтесь на наши соцсети</h2>
+      <h2 data-aos="fade-right">Подписывайтесь на наши соцсети</h2>
 
       <div>
         <Instagram
+          data-aos="fade-right"
           target="_blank"
           href="https://www.instagram.com/leoshev4enko/?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
         >
           <IoLogoInstagram size={30} color="white" />
         </Instagram>
         <Telegram
+          data-aos="fade-right"
           target="_blank"
           href="https://t.me/namarketplacewithleo?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZ"
         >
           <PiTelegramLogoBold size={30} color="white" />
         </Telegram>
         <VContact
+          data-aos="fade-right"
           target="_blank"
           href="https://vk.com/leoshev4enkoschool?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
         >
@@ -35,6 +44,7 @@ export const SocialNetwork = () => {
 
       <div>
         <Square
+          data-aos="fade-right"
           target="_blank"
           href="https://dzen.ru/leoshev44enko?utm_source=Inst&utm_medium=praktikum&utm_campaign=bio_Leo&utm_content=2304&fbclid=PAZXh0bgNhZW0CMTEAAaZ4vvZaJx2vUtlbjJH-fv2Wam1rmZ5x3YKdD0yX-MzNb-mU7d9DcUynF1c_aem_ARDOApKPQvw67Nk-62oBOaE8OX2ZjU78F9aKD0AeG4XQivlnfWO8Vr5c7jZMZk-afSZ3itLDoQaNFjCujgcaCmQ-"
         >
@@ -44,6 +54,7 @@ export const SocialNetwork = () => {
           />
         </Square>
         <Youtube
+          data-aos="fade-right"
           target="_blank"
           href="https://www.youtube.com/channel/UCAy8eLRvaazCC5erOqAvIgw?ybp=-gEHYmlvX0xlbw%253D%253D"
         >
@@ -51,7 +62,7 @@ export const SocialNetwork = () => {
         </Youtube>
       </div>
 
-      <p>
+      <p data-aos="fade-right">
         *«Facebook/Instagram — проект Meta Platforms Inc., деятельность которой
         в России запрещена»
       </p>

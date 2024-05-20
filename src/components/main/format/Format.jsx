@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Modal } from "../Modal/Modal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Format = ({ tarif }) => {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container ref={tarif}>
-      <h1>Выберите формат участия</h1>
+      <h1 data-aos="fade-right">Выберите формат участия</h1>
 
       <Block>
-        <Row1>
+        <Row1 data-aos="fade-right">
           <h3>ОНЛАЙН</h3>
           <ul>
             <li>Онлайн посещение мероприятия</li>
@@ -28,7 +35,7 @@ export const Format = ({ tarif }) => {
           </div>
         </Row1>
 
-        <Row1>
+        <Row1 data-aos="fade-right">
           <h3>VIP</h3>
           <ul>
             <li>Онлайн посещение мероприятия</li>
@@ -52,7 +59,7 @@ export const Format = ({ tarif }) => {
           </div>
         </Row1>
 
-        <Row1>
+        <Row1 data-aos="fade-right">
           <h3>ОФЛАЙН</h3>
           <ul>
             <li>Личное присутствие на мероприятии</li>

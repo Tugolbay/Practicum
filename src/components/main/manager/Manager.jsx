@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaStar } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Manager = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Main>
       <Container>
         <Block>
-          <h1>ТОП-5 лучших персональных менеджеров</h1>
-          <p>
+          <h1 data-aos="fade-right">ТОП-5 лучших персональных менеджеров</h1>
+          <p data-aos="fade-right">
             Если хотите уточнить данные сотрудника и удостовериться в том, что
             он работает в нашей компании – обратитесь в{" "}
             <span>службу заботы.</span>

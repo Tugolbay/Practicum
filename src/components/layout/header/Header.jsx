@@ -139,7 +139,7 @@ export const Header = ({
             </Count>
           </Block3>
         </HeaderMainRow>
-        <ImageRow data-aos="fade-left">
+        <ImageRow data-aos="fade-right">
           <img
             src="https://optim.tildacdn.com/tild3336-6237-4566-b132-373733616533/-/format/webp/IMG_3780_1_1.png"
             alt="img"
