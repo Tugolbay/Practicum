@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Modal2 } from "../Modal/Modal2";
+import { Modal4 } from "../Modal/Modal4";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -32,7 +32,7 @@ export const Partner = () => {
         />
       </div>
 
-      {open && <Modal2 setOpen={setOpen} />}
+      {open && <Modal4 setOpen={setOpen} />}
     </Container>
   );
 };

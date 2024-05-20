@@ -5,12 +5,12 @@ import styled from "styled-components";
 import TextField from "@mui/material/TextField";
 import { IoCloseSharp } from "react-icons/io5";
 
-export const Modal2 = ({ setOpen2 }) => {
+export const Modal3 = ({ setOpen3 }) => {
   const [data, setData] = useState({
     email: "",
     name: "",
     number: "",
-    tarif: "Vip",
+    tarif: "Офлайн",
   });
 
   const [isChecked, setIsChecked] = useState(false);
@@ -112,7 +112,7 @@ export const Modal2 = ({ setOpen2 }) => {
           email: "",
           name: "",
           number: "",
-          tarif: "Vip",
+          tarif: "Офлайн",
         });
         setIsChecked(false);
         alert("Ваша заявка успешна отправлена!");
@@ -126,7 +126,7 @@ export const Modal2 = ({ setOpen2 }) => {
     <Container onSubmit={handleSubmit}>
       <Block>
         <div
-          onClick={() => setOpen2(false)}
+          onClick={() => setOpen3(false)}
           style={{
             display: "flex",
             justifyContent: "flex-end",
@@ -136,7 +136,7 @@ export const Modal2 = ({ setOpen2 }) => {
         </div>
         <Row>
           <h3>Оформление заказа</h3>
-          <p>Я на практикуме - тариф Vip 15 000 руб.</p>
+          <p>Я на практикуме - тариф Офлайн 15 000 руб.</p>
 
           <InputBlock>
             <TextField

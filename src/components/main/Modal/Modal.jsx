@@ -1,75 +1,127 @@
-/* eslint-disable no-useless-escape */
+// /* eslint-disable no-useless-escape */
 /* eslint-disable default-case */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TextField from "@mui/material/TextField";
 import { IoCloseSharp } from "react-icons/io5";
 
 export const Modal = ({ setOpen }) => {
-  const [inp, setInp] = useState("");
-  const [inp2, setInp2] = useState("");
-  const [inp3, setInp3] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    name: "",
+    number: "",
+    tarif: "Онлайн",
+  });
+
+  const [isChecked, setIsChecked] = useState(false);
 
   const [emailDirty, setEmailDirty] = useState(false);
   const [nameDirty, setNameDirty] = useState(false);
-  const [numberlDirty, setNumberDirty] = useState(false);
+  const [numberDirty, setNumberDirty] = useState(false);
 
   const [emailError, setEmailError] = useState(
     "Пожалуйста напишите свой адрес электронной почты"
   );
   const [nameError, setNameError] = useState("Пожалуйста напишите свое имя");
-  const [numberlError, setNumberError] = useState(
+  const [numberError, setNumberError] = useState(
     "Пожалуйста напишите свой номер телефона"
   );
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  };
-
-  const emailHandler = (e) => {
-    setInp(e.target.value);
-    const re =
-      /^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("Некорректный email");
-    } else {
-      setEmailError("");
+  const getData = async () => {
+    try {
+      const res = await fetch(
+        "https://sheet.best/api/sheets/adfd0ae3-e080-44d8-905b-a4a1407e5caf"
+      );
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
     }
   };
 
-  const nameHandler = (e) => {
-    setInp2(e.target.value);
-    const nameRegex = /^[A-Za-zА-Яа-яЁё\s]+$/;
+  useEffect(() => {
+    getData();
+  }, []);
 
-    if (!nameRegex.test(String(e.target.value).toLowerCase())) {
-      setNameError("Некорректное имя");
-    } else {
-      setNameError("");
-    }
-  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
 
-  const numberHandler = (e) => {
-    setInp3(e.target.value);
-
-    if (e.target.value) {
-      setNumberError("");
-    }
-  };
-
-  const onBlure = (e) => {
-    switch (e.target.name) {
+    switch (name) {
       case "email":
         setEmailDirty(true);
+        const emailRe =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!emailRe.test(String(value).toLowerCase())) {
+          setEmailError("Некорректный email");
+        } else {
+          setEmailError("");
+        }
         break;
       case "name":
         setNameDirty(true);
+        const nameRe = /^[A-Za-zА-Яа-яЁё\s]+$/;
+        if (!nameRe.test(String(value).toLowerCase())) {
+          setNameError("Некорректное имя");
+        } else {
+          setNameError("");
+        }
         break;
       case "number":
         setNumberDirty(true);
+        const numberRe = /^\+?[0-9]+$/;
+        if (!numberRe.test(value)) {
+          setNumberError("Некорректный номер телефона");
+        } else {
+          setNumberError("");
+        }
+        break;
+      default:
         break;
     }
   };
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (emailError || nameError || numberError || !isChecked) {
+      alert(
+        "Пожалуйста, заполните все поля корректно и согласитесь с условиями."
+      );
+      return;
+    }
+
+    try {
+      const res = await fetch(
+        "https://sheet.best/api/sheets/374023f5-53db-4147-ad4a-7d11d2136957",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...data }),
+        }
+      );
+      if (res.ok) {
+        console.log("Data submitted successfully!");
+        setData({
+          email: "",
+          name: "",
+          number: "",
+          tarif: "Онлайн",
+        });
+        setIsChecked(false);
+        alert("Ваша заявка успешна отправлена!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Container onSubmit={handleSubmit}>
       <Block>
@@ -84,26 +136,24 @@ export const Modal = ({ setOpen }) => {
         </div>
         <Row>
           <h3>Оформление заказа</h3>
-          <p>Я на практикуме - тариф Офлайн 2590 руб.</p>
+          <p>Я на практикуме - тариф Онлайн 1490 руб.</p>
 
           <InputBlock>
             <TextField
-              onBlur={(e) => onBlure(e)}
-              value={inp}
-              onChange={emailHandler}
+              value={data.email}
               name="email"
               id="standard-basic"
               label="Введите ваш эл.адрес"
               variant="standard"
+              onChange={handleChange}
             />
             {emailDirty && emailError && (
               <p style={{ color: "red", fontSize: "12px" }}>{emailError}</p>
             )}
             <TextField
-              value={inp2}
+              value={data.name}
               name="name"
-              onBlur={(e) => onBlure(e)}
-              onChange={nameHandler}
+              onChange={handleChange}
               id="standard-basic"
               label="Введите ваше имя"
               variant="standard"
@@ -113,16 +163,15 @@ export const Modal = ({ setOpen }) => {
             )}
             <TextField
               name="number"
-              value={inp3}
-              onBlur={(e) => onBlure(e)}
-              onChange={numberHandler}
+              value={data.number}
+              onChange={handleChange}
               id="standard-basic"
               label="Введите ваш телефон"
               variant="standard"
               className="inputs"
             />
-            {numberlDirty && numberlError && (
-              <p style={{ color: "red", fontSize: "12px" }}>{numberlError}</p>
+            {numberDirty && numberError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{numberError}</p>
             )}
           </InputBlock>
 
@@ -131,7 +180,12 @@ export const Modal = ({ setOpen }) => {
           </button>
 
           <div className="checkBlock">
-            <input type="checkbox" className="checkbox" />
+            <input
+              type="checkbox"
+              className="checkbox"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
             <p>
               Я согласен(а) с условиями{" "}
               <a href="https://merkatys.ru/policy">
