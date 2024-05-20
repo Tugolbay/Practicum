@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { IoCloseSharp } from "react-icons/io5";
-import emailjs from "emailjs-com";
 
 export const Modal2 = ({ setOpen }) => {
   const [inp, setInp] = useState("");
@@ -10,24 +9,6 @@ export const Modal2 = ({ setOpen }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_56tgup8",
-        "template_9hvaval",
-        e.target,
-        "-max2LpLG2rH-A3o7"
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-
-    alert("Ваша заяка отправлена");
-
-    setInp("");
-    setInp2("");
-    setInp3("");
   };
   return (
     <Container onSubmit={handleSubmit}>
